@@ -103,15 +103,23 @@ export default function About() {
               transition={{ duration: 0.6, delay: 0.8 }}
               className="mt-6"
             >
-              <a
-                href="/rfp"
-                className="inline-flex items-center gap-2 text-primary text-sm font-semibold hover:opacity-80 transition-opacity"
-              >
-                Our Approach
-                <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                </svg>
-              </a>
+              <div className="flex flex-wrap items-center gap-4">
+                <a
+                  href="/about"
+                  className="inline-flex items-center gap-2 text-primary text-sm font-semibold hover:opacity-80 transition-opacity"
+                >
+                  Read Our Story
+                  <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                  </svg>
+                </a>
+                <a
+                  href="/rfp"
+                  className="inline-flex items-center gap-2 text-muted-foreground text-sm font-semibold hover:text-primary transition-colors"
+                >
+                  Our Approach
+                </a>
+              </div>
             </motion.div>
           </div>
         </div>

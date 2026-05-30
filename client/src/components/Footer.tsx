@@ -43,10 +43,10 @@ export default function Footer() {
             </h5>
             <div className="flex flex-col gap-3">
               {[
-                { label: "Work", href: "/#work" },
+                { label: "About", href: "/about" },
+                { label: "Portfolio", href: "/portfolio" },
                 { label: "Services", href: "/#services" },
-                { label: "Sectors", href: "/#sectors" },
-                { label: "Process", href: "/#process" },
+                { label: "Team", href: "/team" },
               ].map((link) => (
                 <a
                   key={link.label}
