@@ -1,108 +1,51 @@
 /*
- * DESIGN: Contact — Full-bleed photo with directional gradient
- * Same approach as the hero: photo visible, directional overlay for readability.
- * Community park at golden hour — warm, inviting, community-focused.
- * Text left-aligned on the darker left side, photo breathes on the right.
+ * DESIGN: Homepage Contact Teaser
+ * Compact CTA only. Full form and contact details live on /contact.
  */
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
-
-const CTA_BG = "/images/mission-community.jpg";
 
 export default function Contact() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section id="contact" className="relative py-24 md:py-36 overflow-hidden">
-      {/* Background photo — full bleed */}
-      <div
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-        style={{ backgroundImage: `url(${CTA_BG})` }}
-      />
+    <section id="contact" className="py-16 md:py-20 bg-background">
+      <div className="container">
+        <motion.div
+          ref={ref}
+          initial={{ opacity: 0, y: 28 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.75, ease: [0.16, 1, 0.3, 1] }}
+          className="relative overflow-hidden rounded-2xl bg-[oklch(0.17_0.04_155)] px-8 py-12 md:px-12 md:py-16 text-center shadow-xl"
+        >
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(84,142,92,0.32),transparent_35%),radial-gradient(circle_at_bottom_right,rgba(212,176,86,0.22),transparent_30%)]" />
+          <div className="relative mx-auto max-w-3xl">
+            <div className="flex items-center justify-center gap-3 mb-5">
+              <div className="w-8 h-0.5 bg-[oklch(0.72_0.12_75)]" />
+              <span className="text-xs uppercase tracking-[0.18em] text-white/70 font-semibold">Start a Conversation</span>
+              <div className="w-8 h-0.5 bg-[oklch(0.72_0.12_75)]" />
+            </div>
 
-      {/* Directional gradient: strong left → transparent right (same as hero) */}
-      <div
-        className="absolute inset-0"
-        style={{
-          background: `linear-gradient(
-            to right,
-            oklch(0.10 0.04 155 / 0.92) 0%,
-            oklch(0.10 0.04 155 / 0.85) 35%,
-            oklch(0.10 0.04 155 / 0.50) 65%,
-            oklch(0.10 0.04 155 / 0.20) 100%
-          )`,
-        }}
-      />
+            <h2 className="font-[var(--font-display)] font-bold text-3xl md:text-5xl tracking-tight text-white leading-tight mb-5">
+              Let’s build something that matters.
+            </h2>
 
-      <div className="container relative z-10">
-        <div ref={ref} className="max-w-3xl">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={isInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.6 }}
-            className="flex items-center gap-3 mb-6"
-          >
-            <div className="w-8 h-0.5 bg-[oklch(0.72_0.12_75)]" />
-            <span className="text-primary text-xs font-semibold uppercase tracking-[0.2em]">
-              Contact
-            </span>
-          </motion.div>
+            <p className="text-white/72 text-sm md:text-base leading-relaxed mb-8 max-w-2xl mx-auto">
+              The homepage can stay simple. If you are ready to talk through scope, timeline, compliance, or stakeholder needs, the full contact form is one click away.
+            </p>
 
-          <motion.h2
-            initial={{ opacity: 0, y: 40 }}
-            animate={isInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.9, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
-            className="font-[var(--font-display)] font-bold text-white leading-tight tracking-tight mb-6"
-            style={{ fontSize: "clamp(2rem, 5vw, 4.5rem)" }}
-          >
-            Let's build something{" "}
-            <span className="text-primary">that matters.</span>
-          </motion.h2>
-
-          <motion.p
-            initial={{ opacity: 0, y: 24 }}
-            animate={isInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.8, delay: 0.3 }}
-            className="text-white/80 text-base sm:text-lg leading-relaxed mb-10 max-w-2xl"
-          >
-            Whether you need an accessible website, a digital strategy partner, or a team that understands public-sector compliance — we're ready to help. Let's talk about your project.
-          </motion.p>
-
-          <motion.div
-            initial={{ opacity: 0, y: 24 }}
-            animate={isInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.8, delay: 0.5 }}
-            className="flex flex-col sm:flex-row gap-4 items-start flex-wrap"
-          >
             <a
               href="/contact"
-              className="inline-flex items-center gap-2 bg-primary text-white font-semibold text-sm px-7 py-4 rounded-md hover:bg-[oklch(0.40_0.14_150)] transition-all shadow-lg shadow-primary/30"
+              className="inline-flex items-center gap-2 bg-white text-[oklch(0.17_0.04_155)] font-semibold text-sm px-6 py-3 rounded-md hover:bg-[oklch(0.90_0.03_90)] transition-all"
             >
-              Get In Touch
+              Connect With Us
               <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
                 <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
               </svg>
             </a>
-          </motion.div>
-
-          {/* Contact info row */}
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={isInView ? { opacity: 1 } : {}}
-            transition={{ duration: 0.8, delay: 0.7 }}
-            className="mt-10 flex flex-wrap gap-8"
-          >
-            <div>
-              <div className="text-white/40 text-[10px] uppercase tracking-[0.15em] mb-1">Response Time</div>
-              <span className="text-white/80 text-sm">Within 24–48 hours</span>
-            </div>
-            <div>
-              <div className="text-white/40 text-[10px] uppercase tracking-[0.15em] mb-1">Location</div>
-              <span className="text-white/80 text-sm">Remote-First, North America</span>
-            </div>
-          </motion.div>
-        </div>
+          </div>
+        </motion.div>
       </div>
     </section>
   );

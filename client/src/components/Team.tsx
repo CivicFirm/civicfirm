@@ -1,87 +1,40 @@
 /*
- * DESIGN: Institutional — Team Section
- * Dark background. Clean team cards.
- * Photos: grayscale on desktop until hover.
- * 6 members: uniform 3-column grid, 2 rows of 3.
- * Subtitle clarifies this is not the full team.
+ * DESIGN: Homepage Team Entry
+ * Concise teaser that routes users to the standalone team page.
  */
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
+import { Link } from "wouter";
 
-const team = [
-  /* ── Row 1 ── */
+const teamGroups = [
+  "Compliance & Delivery",
+  "Content & Research",
+  "Design & Development",
+  "Strategy & Leadership",
+];
+
+const previewMembers = [
   {
     name: "Dr. Jason Bruce",
-    role: "Co-Founder & Chief Executive Officer",
-    bio: "Leads all client strategy, institutional partnerships, and business development. Specialist in accessible digital transformation for public-sector organizations across North America.",
+    role: "Strategy & Leadership",
     image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663407421710/CU5JQUQHP3FutNoS5xA4np/jason-bruce_24906696.png",
   },
   {
     name: "Dr. Marisol Campos Navarrete",
-    role: "Co-Founder & Director of Content Strategy",
-    bio: "Leads content architecture, instructional design, and user-focused content strategy across all projects. Specializes in translating complex subject matter into clear, accessible digital experiences for public and institutional audiences.",
+    role: "Content & Research",
     image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663407421710/CU5JQUQHP3FutNoS5xA4np/marisol-navarrete_4717efd6.png",
   },
   {
-    name: "Ray Amari, M.Mgt.",
-    role: "Director of Operations & Delivery",
-    bio: "Manages project timelines, budgets, and milestone delivery across all active engagements. Ensures every project ships on time, on scope, and within budget.",
-    image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663407421710/CU5JQUQHP3FutNoS5xA4np/reza-amari_6e0b802d.png",
-  },
-  /* ── Row 2 ── */
-  {
-    name: "Brian Lee",
-    role: "Lead Developer & Technical Architect",
-    bio: "Builds and maintains the technical infrastructure behind every project. Specializes in full-stack development, performance optimization, and secure deployment for public-sector platforms.",
-    image: "/images/team-brian.png",
-  },
-  {
     name: "Kathrina Cabrera",
-    role: "Lead UX Designer & Front-End Developer",
-    bio: "Designs user interfaces and builds responsive front-end experiences. Translates wireframes into accessible, pixel-perfect code that meets WCAG standards across all devices.",
+    role: "Design & Development",
     image: "/images/team-kathrina.png",
   },
   {
     name: "Mazen Cheikh",
-    role: "Director of Compliance & Accessibility",
-    bio: "Oversees WCAG 2.1 AA, ADA Title II, and Section 508 compliance across all projects. Conducts accessibility audits, remediation planning, and standards documentation.",
+    role: "Compliance & Delivery",
     image: "/images/team-mazen.png",
   },
 ];
-
-function TeamCard({ member, index }: { member: (typeof team)[0]; index: number }) {
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: "-60px" });
-
-  return (
-    <motion.div
-      ref={ref}
-      initial={{ opacity: 0, y: 30 }}
-      animate={isInView ? { opacity: 1, y: 0 } : {}}
-      transition={{ duration: 0.6, delay: index * 0.08, ease: [0.16, 1, 0.3, 1] }}
-      className="group"
-    >
-      <div className="relative overflow-hidden aspect-square mb-4 rounded-lg">
-        <img
-          src={member.image}
-          alt={member.name}
-          className="w-full h-full object-cover object-top transition-all duration-700 md:grayscale md:group-hover:grayscale-0 md:group-hover:scale-105"
-        />
-        {/* Accent bar: always visible on mobile, hover-revealed on desktop */}
-        <div className="absolute bottom-0 left-0 right-0 h-1 bg-[oklch(0.72_0.12_75)] md:scale-x-0 md:group-hover:scale-x-100 transition-transform duration-500 origin-left" />
-      </div>
-      <h4 className="font-[var(--font-display)] font-semibold text-foreground text-sm md:text-base tracking-tight">
-        {member.name}
-      </h4>
-      <p className="text-primary text-xs font-medium mt-0.5 mb-2">
-        {member.role}
-      </p>
-      <p className="text-muted-foreground text-xs leading-relaxed">
-        {member.bio}
-      </p>
-    </motion.div>
-  );
-}
 
 export default function Team() {
   const headRef = useRef(null);
@@ -90,49 +43,50 @@ export default function Team() {
   return (
     <section id="team" className="py-20 md:py-28 bg-background">
       <div className="container">
-        {/* Header */}
-        <div ref={headRef} className="flex flex-col md:flex-row md:items-end md:justify-between mb-10 md:mb-14">
-          <div>
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={headInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.6 }}
-              className="flex items-center gap-3 mb-4"
-            >
+        <div ref={headRef} className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-end mb-12">
+          <div className="lg:col-span-7">
+            <motion.div initial={{ opacity: 0, y: 20 }} animate={headInView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.6 }} className="flex items-center gap-3 mb-4">
               <div className="w-8 h-0.5 bg-[oklch(0.72_0.12_75)]" />
-              <span className="section-label">Leadership</span>
+              <span className="section-label">Our Team</span>
             </motion.div>
-
-            <motion.h2
-              initial={{ opacity: 0, y: 30 }}
-              animate={headInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.8, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
-              className="font-[var(--font-display)] font-bold text-3xl sm:text-4xl md:text-5xl tracking-tight text-foreground"
-            >
-              The people behind{" "}
-              <span className="text-primary">the work.</span>
+            <motion.h2 initial={{ opacity: 0, y: 30 }} animate={headInView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.8, delay: 0.1, ease: [0.16, 1, 0.3, 1] }} className="font-[var(--font-display)] font-bold text-3xl sm:text-4xl md:text-5xl tracking-tight text-foreground leading-tight">
+              Four groups. <span className="text-primary">One delivery standard.</span>
             </motion.h2>
           </div>
 
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={headInView ? { opacity: 1 } : {}}
-            transition={{ delay: 0.4 }}
-            className="mt-4 md:mt-0 max-w-xs"
-          >
-            <p className="text-muted-foreground text-sm leading-relaxed">
-              Our leadership team brings together strategy, compliance, design, development, and delivery — backed by a broader network of specialists.
+          <motion.div initial={{ opacity: 0 }} animate={headInView ? { opacity: 1 } : {}} transition={{ delay: 0.35 }} className="lg:col-span-5">
+            <p className="text-muted-foreground text-sm md:text-base leading-relaxed mb-6">
+              Meet the people behind strategy, content, design, accessibility, and delivery on the standalone team page.
             </p>
-            <p className="text-muted-foreground/60 text-xs mt-2 italic">
-              Introducing our leadership — not the whole team.
-            </p>
+            <Link href="/team">
+              <a className="inline-flex items-center justify-center px-5 py-3 rounded-md bg-primary text-white font-semibold text-sm hover:bg-primary/90 transition-colors">
+                Meet the Team
+              </a>
+            </Link>
           </motion.div>
         </div>
 
-        {/* Uniform 3-column grid — 2 rows of 3 */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 md:gap-10">
-          {team.map((member, i) => (
-            <TeamCard key={member.name} member={member} index={i} />
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-10">
+          {teamGroups.map((group) => (
+            <Link key={group} href="/team">
+              <a className="rounded-xl border border-border bg-white dark:bg-[oklch(0.20_0.035_155)] p-5 hover:border-primary/50 hover:shadow-md transition-all">
+                <p className="text-[10px] uppercase tracking-[0.18em] text-primary font-bold mb-2">Team Section</p>
+                <h3 className="font-[var(--font-display)] font-bold text-lg text-foreground tracking-tight">{group}</h3>
+              </a>
+            </Link>
+          ))}
+        </div>
+
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+          {previewMembers.map((member, index) => (
+            <motion.div key={member.name} initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-60px" }} transition={{ duration: 0.55, delay: index * 0.08 }} className="group">
+              <div className="relative aspect-square overflow-hidden rounded-xl mb-3 bg-[oklch(0.14_0.04_155)]">
+                <img src={member.image} alt={member.name} className="w-full h-full object-cover object-top transition-all duration-700 md:grayscale md:group-hover:grayscale-0 md:group-hover:scale-105" loading="lazy" />
+                <div className="absolute bottom-0 left-0 right-0 h-1 bg-[oklch(0.72_0.12_75)]" />
+              </div>
+              <h4 className="font-[var(--font-display)] font-semibold text-foreground text-sm tracking-tight">{member.name}</h4>
+              <p className="text-primary text-xs mt-0.5">{member.role}</p>
+            </motion.div>
           ))}
         </div>
       </div>

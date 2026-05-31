@@ -12,10 +12,10 @@ import { Link, useLocation } from "wouter";
 import { useTheme } from "@/contexts/ThemeContext";
 
 const navLinks = [
-  { label: "Work", href: "/#work" },
+  { label: "About", href: "/about" },
+  { label: "Portfolio", href: "/portfolio" },
   { label: "Services", href: "/#services" },
-  { label: "Sectors", href: "/#sectors" },
-  { label: "Team", href: "/#team" },
+  { label: "Team", href: "/team" },
   { label: "Our Approach", href: "/rfp" },
 ];
 
@@ -25,7 +25,7 @@ export default function Navbar() {
   const { theme, toggleTheme } = useTheme();
   const [location, setLocation] = useLocation();
 
-  const isRFPPage = location === "/rfp";
+  const isInteriorPage = location !== "/";
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 20);
@@ -70,7 +70,7 @@ export default function Navbar() {
     // For non-hash links (like /rfp), let the default behavior work
   }, [location, setLocation]);
 
-  const navBg = scrolled || isRFPPage || menuOpen
+  const navBg = scrolled || isInteriorPage || menuOpen
     ? "bg-[oklch(0.985_0.008_85)] dark:bg-[oklch(0.18_0.04_155)] shadow-sm border-b border-[oklch(0.89_0.015_80)] dark:border-[oklch(0.30_0.03_155)]"
     : "bg-transparent";
 
@@ -90,7 +90,7 @@ export default function Navbar() {
             <Link href="/">
               <a className="flex items-center gap-2.5 flex-shrink-0">
                 <img
-                  src={scrolled || isRFPPage || menuOpen ? "/logo-light.png" : "/logo-dark.png"}
+                  src={scrolled || isInteriorPage || menuOpen ? "/logo-light.png" : "/logo-dark.png"}
                   alt="Civic Firm"
                   className="h-8 w-auto object-contain"
                   style={{ maxWidth: '200px' }}
@@ -105,7 +105,7 @@ export default function Navbar() {
                   key={link.label}
                   href={link.href}
                   onClick={(e) => handleNavClick(e, link.href)}
-                  className={`text-sm font-medium px-3 py-2 rounded-md transition-colors ${linkBaseClass(scrolled || isRFPPage)}`}
+                  className={`text-sm font-medium px-3 py-2 rounded-md transition-colors ${linkBaseClass(scrolled || isInteriorPage)}`}
                 >
                   {link.label}
                 </a>
@@ -119,7 +119,7 @@ export default function Navbar() {
                 onClick={toggleTheme}
                 aria-label="Toggle theme"
                 className={`w-9 h-9 rounded-full flex items-center justify-center transition-colors ${
-                  scrolled || isRFPPage
+                  scrolled || isInteriorPage
                     ? "hover:bg-gray-100 dark:hover:bg-[oklch(0.26_0.03_155)] text-[oklch(0.35_0.02_75)] dark:text-[oklch(0.7_0.01_80)]"
                     : "hover:bg-white/10 text-white/80"
                 }`}
@@ -149,7 +149,7 @@ export default function Navbar() {
               onClick={() => setMenuOpen(!menuOpen)}
               aria-label="Toggle menu"
               className={`md:hidden w-9 h-9 flex flex-col items-center justify-center gap-1.5 transition-colors ${
-                scrolled || isRFPPage || menuOpen ? "text-[oklch(0.22_0.02_75)] dark:text-white" : "text-white"
+                scrolled || isInteriorPage || menuOpen ? "text-[oklch(0.22_0.02_75)] dark:text-white" : "text-white"
               }`}
             >
               <span className={`block h-0.5 bg-current transition-all duration-300 ${menuOpen ? "w-5 rotate-45 translate-y-2" : "w-5"}`} />
