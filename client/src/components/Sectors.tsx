@@ -16,7 +16,7 @@ const sectors = [
       </svg>
     ),
     title: "Small Business & Local Enterprise",
-    desc: "Heritage brands, boutiques, and community businesses that deserve a digital presence as strong as their reputation — custom-built, not templated.",
+    desc: "Custom-built websites for heritage brands, boutiques, and community businesses.",
   },
   {
     icon: (
@@ -25,7 +25,7 @@ const sectors = [
       </svg>
     ),
     title: "Municipal / City Government",
-    desc: "City websites with ADA compliance, .gov transitions, GIS integration, and resident self-service portals.",
+    desc: "ADA-compliant city websites with .gov transitions and resident portals.",
   },
   {
     icon: (
@@ -34,7 +34,7 @@ const sectors = [
       </svg>
     ),
     title: "County Government",
-    desc: "County-level platforms with department portals, public records access, and multi-jurisdictional compliance.",
+    desc: "Department portals, public records, and multi-jurisdictional compliance.",
   },
   {
     icon: (
@@ -43,7 +43,7 @@ const sectors = [
       </svg>
     ),
     title: "State / Provincial Agency",
-    desc: "State and provincial government websites with Section 508 compliance, bilingual content, and enterprise-scale CMS.",
+    desc: "Section 508 compliant websites with bilingual content and enterprise CMS.",
   },
   {
     icon: (
@@ -52,7 +52,7 @@ const sectors = [
       </svg>
     ),
     title: "K–12 School District",
-    desc: "School district websites with WCAG 2.1 AA, ADA Title II, CMS with role-based permissions, emergency alerts, and staff directories.",
+    desc: "WCAG-compliant district websites with CMS, alerts, and staff directories.",
   },
   {
     icon: (
@@ -61,7 +61,7 @@ const sectors = [
       </svg>
     ),
     title: "Post-Secondary Institution",
-    desc: "University and college websites with accessible course catalogs, faculty directories, and student resource portals.",
+    desc: "Accessible university websites with course catalogs and faculty directories.",
   },
   {
     icon: (
@@ -70,7 +70,7 @@ const sectors = [
       </svg>
     ),
     title: "Nonprofit Organization",
-    desc: "Purpose-driven websites with donation integrations, event calendars, resource libraries, and multilingual support.",
+    desc: "Purpose-driven websites with donations, events, and multilingual support.",
   },
   {
     icon: (
@@ -79,7 +79,7 @@ const sectors = [
       </svg>
     ),
     title: "Indigenous / First Nations Organization",
-    desc: "Culturally informed digital platforms for First Nations, tribal governments, and Indigenous-led nonprofits — built with community, not just for it.",
+    desc: "Culturally informed platforms for First Nations and Indigenous-led organizations.",
   },
   {
     icon: (
@@ -88,7 +88,7 @@ const sectors = [
       </svg>
     ),
     title: "Housing Authority",
-    desc: "Housing authority websites with WordPress, Spanish localization, application intake systems, and resident portals.",
+    desc: "WordPress sites with Spanish localization, intake systems, and resident portals.",
   },
   {
     icon: (
@@ -97,7 +97,7 @@ const sectors = [
       </svg>
     ),
     title: "Healthcare / Public Health",
-    desc: "Accessible health organization websites with multilingual content, resource directories, and HIPAA-conscious design.",
+    desc: "Accessible health websites with multilingual content and resource directories.",
   },
   {
     icon: (
@@ -106,7 +106,7 @@ const sectors = [
       </svg>
     ),
     title: "Arts, Culture & Heritage",
-    desc: "Film commissions, performing arts centers, and cultural institutions — event-driven sites that balance creative identity with accessibility.",
+    desc: "Event-driven sites for film commissions, arts centers, and cultural institutions.",
   },
   {
     icon: (
@@ -115,7 +115,7 @@ const sectors = [
       </svg>
     ),
     title: "Professional Association",
-    desc: "Member portals, bilingual WordPress sites, job boards, and digital learning platforms for national and regional associations.",
+    desc: "Member portals, job boards, and learning platforms for national associations.",
   },
 ];
 
@@ -124,7 +124,7 @@ export default function Sectors() {
   const headInView = useInView(headRef, { once: true, margin: "-100px" });
 
   return (
-    <section id="sectors" className="py-20 md:py-28 bg-secondary dark:bg-[oklch(0.22_0.035_155)]">
+    <section id="sectors" className="pt-10 pb-20 md:pt-12 md:pb-28 bg-secondary dark:bg-[oklch(0.22_0.035_155)]">
       <div className="container">
         {/* Header */}
         <div ref={headRef} className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-12 md:mb-16">
@@ -170,10 +170,10 @@ export default function Sectors() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-60px" }}
               transition={{ duration: 0.5, delay: (i % 4) * 0.07, ease: [0.16, 1, 0.3, 1] }}
-              className="bg-background dark:bg-[oklch(0.26_0.03_155)] rounded-lg p-6 border border-border hover:border-primary/30 hover:shadow-md transition-all duration-300 group"
+              className="bg-background dark:bg-[oklch(0.26_0.03_155)] rounded-lg px-4 py-4 border border-border hover:border-primary/30 hover:shadow-md transition-all duration-300 group"
             >
               {/* Icon in green circle */}
-              <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center text-primary mb-4 group-hover:bg-primary group-hover:text-white transition-all duration-300">
+              <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center text-primary mb-3 group-hover:bg-primary group-hover:text-white transition-all duration-300">
                 {sector.icon}
               </div>
               <h3 className="font-[var(--font-display)] font-semibold text-sm md:text-base text-foreground mb-2 leading-tight">

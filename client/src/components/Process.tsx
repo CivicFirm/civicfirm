@@ -45,7 +45,7 @@ export default function Process() {
   const headInView = useInView(headRef, { once: true, margin: "-100px" });
 
   return (
-    <section id="process" className="py-20 md:py-28 bg-secondary dark:bg-[oklch(0.22_0.035_155)]">
+    <section id="process" className="pt-10 pb-20 md:pt-12 md:pb-28 bg-secondary dark:bg-[oklch(0.22_0.035_155)]">
       <div className="container">
         {/* Header */}
         <div ref={headRef} className="text-center max-w-2xl mx-auto mb-16 md:mb-20">

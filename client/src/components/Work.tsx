@@ -8,7 +8,7 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 
-const projects = [
+export const projects = [
   {
     name: "Tucson Tots",
     sector: "K–12 & Early Education",
@@ -66,7 +66,7 @@ const projects = [
   },
 ];
 
-function ProjectCard({
+export function ProjectCard({
   project,
   index,
   featured,
@@ -189,7 +189,7 @@ export default function Work() {
   const standard = projects.filter((p) => !p.featured);
 
   return (
-    <section id="work" className="py-20 md:py-28 bg-[oklch(0.12_0.03_155)]">
+    <section id="work" className="pt-10 pb-20 md:pt-12 md:pb-28 bg-[oklch(0.12_0.03_155)]">
       <div className="container">
         {/* Section header */}
         <div

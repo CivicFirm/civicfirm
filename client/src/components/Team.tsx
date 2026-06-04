@@ -8,7 +8,7 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 
-const team = [
+export const team = [
   /* ── Row 1 ── */
   {
     name: "Dr. Jason Bruce",
@@ -49,7 +49,7 @@ const team = [
   },
 ];
 
-function TeamCard({ member, index }: { member: (typeof team)[0]; index: number }) {
+export function TeamCard({ member, index }: { member: (typeof team)[0]; index: number }) {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-60px" });
 
@@ -88,7 +88,7 @@ export default function Team() {
   const headInView = useInView(headRef, { once: true, margin: "-100px" });
 
   return (
-    <section id="team" className="py-20 md:py-28 bg-background">
+    <section id="team" className="pt-10 pb-20 md:pt-12 md:pb-28 bg-background">
       <div className="container">
         {/* Header */}
         <div ref={headRef} className="flex flex-col md:flex-row md:items-end md:justify-between mb-10 md:mb-14">

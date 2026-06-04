@@ -14,7 +14,7 @@ export default function MissionCTA() {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section className="relative pt-24 pb-44 md:pt-36 md:pb-60 overflow-hidden">
+    <section className="relative pt-16 pb-24 md:pt-20 md:pb-32 overflow-hidden">
       {/* Background photo — full bleed */}
       <div
         className="absolute inset-0 bg-cover bg-bottom bg-no-repeat"
@@ -42,11 +42,10 @@ export default function MissionCTA() {
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
             className="font-[var(--font-display)] font-bold text-white leading-[1.15] tracking-tight mb-6"
-            style={{ fontSize: "clamp(2rem, 4.5vw, 3.75rem)" }}
+            style={{ fontSize: "clamp(1.5rem, 3.5vw, 3rem)" }}
           >
-            Technology should serve the{" "}
-            <span className="text-primary">community</span>,
-            <br />not the other way around.
+            Technology should serve
+            <br />the <span className="text-primary">community</span>, not the other way around.
           </motion.h2>
 
           <motion.p
