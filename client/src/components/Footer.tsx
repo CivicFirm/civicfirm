@@ -12,7 +12,7 @@ export default function Footer() {
   return (
     <>
     <footer className="bg-[oklch(0.18_0.04_155)] border-t border-[oklch(0.26_0.03_155)]" role="contentinfo">
-      <div className="container py-14">
+      <div className="container pt-14 pb-8">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-10 md:gap-8">
           {/* Logo + tagline */}
           <div className="md:col-span-4">
@@ -143,16 +143,13 @@ export default function Footer() {
     </footer>
 
     {/* Developed by Mentee */}
-    <div style={{ backgroundColor: "oklch(0.95 0.015 70)", borderTop: "1px solid oklch(0.88 0.02 70)" }}>
-      <div className="container py-5 flex items-center justify-center gap-4">
-        <span
-          className="text-xs uppercase font-medium"
-          style={{ letterSpacing: "0.25em", color: "oklch(0.45 0.04 40)" }}
-        >
+    <div className="bg-[oklch(0.14_0.04_155)] border-t border-[oklch(0.22_0.03_155)]">
+      <div className="container py-4 flex items-center justify-center gap-4">
+        <span className="text-xs uppercase font-medium tracking-[0.25em] text-white/40">
           Developed by
         </span>
         <a href="https://mentee.ca" target="_blank" rel="noopener noreferrer" className="hover:opacity-80 transition-opacity">
-          <img src="/images/mentee.png" alt="Mentee" className="h-8 w-auto" />
+          <img src="/images/mentee.png" alt="Mentee" className="h-7 w-auto brightness-0 invert opacity-50" />
         </a>
       </div>
     </div>

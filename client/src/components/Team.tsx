@@ -65,7 +65,7 @@ export default function Team() {
   const headInView = useInView(headRef, { once: true, margin: "-100px" });
 
   return (
-    <section id="team" className="py-14 md:py-20 bg-background">
+    <section id="team" className="pb-10 md:pb-14 bg-background">
       <div className="container">
         {/* Header */}
         <div ref={headRef} className="flex flex-col md:flex-row md:items-end md:justify-between mb-10 md:mb-14">
@@ -104,7 +104,7 @@ export default function Team() {
         </div>
 
         {/* 3-column grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 md:gap-10">
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 md:gap-8 max-w-3xl">
           {team.map((member, i) => (
             <TeamCard key={member.name} member={member} index={i} />
           ))}
