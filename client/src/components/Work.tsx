@@ -10,58 +10,80 @@ import { useRef } from "react";
 
 const projects = [
   {
-    name: "Tucson Tots",
-    sector: "K–12 & Early Education",
-    descriptor: "Family enrollment & outreach platform",
+    name: "Toronto Cold Plunge",
+    sector: "Wellness & Recovery",
+    descriptor: "Premier recovery centre in North York",
     summary:
-      "A standards-compliant website for a licensed early learning institution — built to drive enrollment, communicate with families, and meet district accessibility requirements.",
+      "A sleek, conversion-focused website for Toronto's top cold plunge and recovery facility — featuring online booking, service breakdowns, and membership options.",
+    image: "/portfolio/torontocoldplunge-hero.png",
+    url: "https://torontocoldplunge.com",
+    accent: "#38bdf8",
+    featured: true,
+  },
+  {
+    name: "Pure Thai",
+    sector: "Wellness & Spa",
+    descriptor: "Luxury Thai massage & wellness",
+    summary:
+      "An elegant, brand-forward website for a premium Thai massage studio — designed to communicate luxury, build trust, and drive bookings.",
+    image: "/portfolio/purethai-hero.png",
+    url: "https://purethai.ca",
+    accent: "#c084fc",
+    featured: true,
+  },
+  {
+    name: "GoGo Muscle Training",
+    sector: "Fitness & Training",
+    descriptor: "EMS fitness studio",
+    summary:
+      "A high-energy website for an EMS training studio — built to explain the technology, showcase results, and convert visitors into members.",
+    image: "/portfolio/gogomuscle-hero.png",
+    url: "https://gogomuscletraining.com",
+    accent: "#f97316",
+    featured: false,
+  },
+  {
+    name: "Tucson Tots",
+    sector: "Childcare & Education",
+    descriptor: "Early learning centre",
+    summary:
+      "A warm, trust-building website for a licensed early learning centre — designed to drive enrollment and communicate with families.",
     image: "/portfolio/tucsontots-hero.png",
     url: "https://tucsontots.com",
     accent: "#ffc83c",
-    featured: true,
-  },
-  {
-    name: "Kinship AI",
-    sector: "Health Equity & AI Research",
-    descriptor: "Indigenous-led health AI research hub",
-    summary:
-      "A research platform co-designing equitable AI-enabled healthcare systems through Indigenous-led, community-grounded participatory approaches and cross-cultural collaboration.",
-    image: "/portfolio/kinshipai-hero.png",
-    url: "https://kinshipai.org",
-    accent: "#2dd4a8",
-    featured: true,
-  },
-  {
-    name: "Visio",
-    sector: "Nonprofit & Community Media",
-    descriptor: "Community media production hub",
-    summary:
-      "A multi-format media platform supporting public outreach, grant reporting, and community storytelling.",
-    image: "/portfolio/visio-hero.png",
-    url: "https://visio.ca",
-    accent: "#dc5050",
     featured: false,
   },
   {
-    name: "EagleFeather",
-    sector: "Public Health & Wellness",
-    descriptor: "National health resource directory",
+    name: "Bravik",
+    sector: "Construction",
+    descriptor: "Full-service construction company",
     summary:
-      "A searchable, WCAG-compliant health directory serving communities across all 13 provinces and territories.",
-    image: "/portfolio/eaglefeather-hero.png",
-    url: "https://eaglefeather.ca",
-    accent: "#ffa03c",
-    featured: false,
-  },
-  {
-    name: "Research Circle",
-    sector: "Research & Data Governance",
-    descriptor: "Knowledge mobilization platform",
-    summary:
-      "Digital infrastructure for community-led research, data sovereignty, and accessible knowledge sharing.",
-    image: "/portfolio/researchcircle-hero.png",
-    url: "https://researchcircle.ca",
+      "A professional, project-focused website for a construction firm — showcasing completed builds, services, and credibility.",
+    image: "/portfolio/bravik-hero.png",
+    url: "https://bravik.ca",
     accent: "#64a0ff",
+    featured: false,
+  },
+  {
+    name: "Stitch Deliver",
+    sector: "Home Services",
+    descriptor: "Mobile alterations & tailoring",
+    summary:
+      "A clean, service-focused website for a pickup-and-delivery tailoring business — designed to explain the process and drive bookings.",
+    image: "/portfolio/stitchdeliver-hero.png",
+    url: "https://stitchdeliver.ca",
+    accent: "#ec4899",
+    featured: false,
+  },
+  {
+    name: "Lendia",
+    sector: "Financial Services",
+    descriptor: "Mortgage lending company",
+    summary:
+      "A professional, trust-building website for a mortgage lender — designed to generate leads, explain products, and build confidence.",
+    image: "/portfolio/lendia-hero.png",
+    url: "https://lendia.ca",
+    accent: "#10b981",
     featured: false,
   },
 ];
@@ -230,8 +252,8 @@ export default function Work() {
             transition={{ delay: 0.4 }}
             className="mt-4 md:mt-0 text-white/70 text-sm max-w-xs leading-relaxed"
           >
-            Real projects for real organizations — built to meet compliance
-            standards, serve communities, and deliver measurable results.
+            Real projects for real businesses — designed to attract customers,
+            build trust, and drive growth.
           </motion.p>
         </div>
 
@@ -267,7 +289,7 @@ export default function Work() {
           className="mt-10 flex flex-col sm:flex-row items-start sm:items-center justify-between border-t border-[oklch(0.24_0.03_155)] pt-8 gap-4"
         >
           <p className="text-white/55 text-xs">
-            All projects built to WCAG 2.1 AA accessibility standards.
+            Every project custom-designed and built to perform.
           </p>
           <a
             href="/contact"

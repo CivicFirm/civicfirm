@@ -6,6 +6,7 @@
  */
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
+import { trackEvent } from "@/lib/analytics";
 
 const CTA_BG = "/images/mission-community.jpg";
 
@@ -66,7 +67,7 @@ export default function Contact() {
             transition={{ duration: 0.8, delay: 0.3 }}
             className="text-white/80 text-base sm:text-lg leading-relaxed mb-10 max-w-2xl"
           >
-            Whether you need an accessible website, a digital strategy partner, or a team that understands public-sector compliance — we're ready to help. Let's talk about your project.
+            Whether you need a brand-new website, a full redesign, or a digital partner who gets local business — we're ready to help. Let's talk about your project.
           </motion.p>
 
           <motion.div
@@ -77,6 +78,7 @@ export default function Contact() {
           >
             <a
               href="/contact"
+              onClick={() => trackEvent("cta_click", "Get In Touch", { location: "contact_section" })}
               className="inline-flex items-center gap-2 bg-primary text-white font-semibold text-sm px-7 py-4 rounded-md hover:bg-[oklch(0.40_0.14_150)] transition-all shadow-lg shadow-primary/30"
             >
               Get In Touch

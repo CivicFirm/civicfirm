@@ -11,32 +11,32 @@ const steps = [
   {
     num: "01",
     title: "Discovery",
-    desc: "Stakeholder interviews, audience research, content audit, and technical requirements gathering. Nothing is assumed.",
+    desc: "We learn your business, your customers, and your goals. We look at your competitors and figure out what your site needs to win.",
   },
   {
     num: "02",
     title: "Strategy",
-    desc: "Information architecture, sitemap, content strategy, compliance checklist, and milestone-based timeline.",
+    desc: "Site structure, page flow, content plan, and a clear timeline with milestones. You know exactly what's coming and when.",
   },
   {
     num: "03",
     title: "Design",
-    desc: "Wireframes, then high-fidelity mockups. Design is iterative — you approve every major decision before development begins.",
+    desc: "Custom mockups based on your brand. You see it before we build it — and you approve every design decision.",
   },
   {
     num: "04",
     title: "Build",
-    desc: "Accessibility baked in from the start. Code is clean, documented, and built for long-term maintainability.",
+    desc: "Clean, fast code built for performance and SEO. Mobile-first, optimized for speed, and ready to rank.",
   },
   {
     num: "05",
     title: "Launch",
-    desc: "QA testing, accessibility audits, cross-browser testing, and content migration before a carefully managed go-live.",
+    desc: "Thorough testing across all devices, SEO setup, analytics integration, and a smooth go-live with zero downtime.",
   },
   {
     num: "06",
     title: "Support",
-    desc: "Staff training, documentation, and ongoing maintenance — ensuring your team is confident and your site stays current.",
+    desc: "Training on how to update your site, plus ongoing maintenance to keep everything running, secure, and up to date.",
   },
 ];
 

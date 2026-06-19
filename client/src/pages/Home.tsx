@@ -23,15 +23,15 @@ import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 
 const clientNames = [
-  "Municipal Government",
-  "K–12 Education",
-  "Nonprofit",
-  "Indigenous Organizations",
-  "Small Business",
-  "Arts & Culture",
-  "Associations",
-  "Public Health",
-  "Local Enterprise",
+  "Fitness Studios",
+  "Wellness Centres",
+  "Restaurants",
+  "Construction",
+  "Childcare",
+  "Mortgage & Lending",
+  "Spas & Salons",
+  "Home Services",
+  "Local Retail",
 ];
 
 export default function Home() {
@@ -69,7 +69,7 @@ export default function Home() {
       <FAQ />
       <Contact />
       <Marquee
-        items={["WCAG 2.1 AA Compliant", "On-Time Delivery", "ADA Title II", "Section 508", "CMS Training Included", "Accessible by Default"]}
+        items={["Custom Designed", "On-Time Delivery", "SEO Optimized", "Mobile-First", "Easy to Update", "Built to Convert"]}
         speed={25}
         separator="·"
       />

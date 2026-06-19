@@ -8,13 +8,13 @@ import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 
 const standards = [
-  { title: "WCAG 2.1 AA", desc: "Every build meets or exceeds Level AA" },
-  { title: "ADA Title II", desc: "Full compliance for public entities" },
-  { title: "Section 508", desc: "Federal accessibility standards" },
-  { title: "Mobile-First", desc: "Responsive across all devices" },
-  { title: "CMS Training", desc: "Your team manages content independently" },
-  { title: "Bilingual / Multilingual", desc: "Language switching and RTL support" },
-  { title: "Content Migration", desc: "Seamless transition from legacy systems" },
+  { title: "Mobile-First", desc: "Responsive across all devices and screen sizes" },
+  { title: "SEO Optimized", desc: "Built to rank on Google from day one" },
+  { title: "Fast Loading", desc: "Performance-optimized for speed and conversions" },
+  { title: "SSL & Security", desc: "Secure hosting with SSL certificates included" },
+  { title: "Easy to Update", desc: "You can update content without a developer" },
+  { title: "Analytics Ready", desc: "Google Analytics and conversion tracking built in" },
+  { title: "Social Integration", desc: "Connected to your Instagram, Google, and more" },
   { title: "On-Time Delivery", desc: "Milestone-based, no surprise scope changes" },
 ];
 
@@ -36,7 +36,7 @@ export default function Compliance() {
             >
               <div className="w-8 h-0.5 bg-[oklch(0.72_0.12_75)]" />
               <span className="text-[oklch(0.78_0.14_75)] text-xs font-semibold uppercase tracking-[0.2em]">
-                Standards & Compliance
+                Quality & Standards
               </span>
             </motion.div>
 
@@ -57,7 +57,7 @@ export default function Compliance() {
               transition={{ duration: 0.7, delay: 0.2 }}
               className="text-white/60 text-sm md:text-base leading-relaxed mt-5 max-w-md"
             >
-              We speak the language of procurement. Every deliverable is documented, every standard is met, and every deadline is honored.
+              No cutting corners. Every site is built to perform, designed to convert, and delivered on time.
             </motion.p>
 
             <motion.div

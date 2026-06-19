@@ -10,19 +10,19 @@ import { useRef } from "react";
 const services = [
   {
     title: "Web Design & Development",
-    desc: "Custom, accessible websites built to WCAG 2.1 AA and ADA Title II standards. Every site ships with a fully trained CMS so your team owns their content from day one.",
+    desc: "Custom websites that look sharp, load fast, and turn visitors into customers. Every site is mobile-first, SEO-optimized, and built to grow with your business.",
   },
   {
     title: "Brand & Content Strategy",
-    desc: "We develop the voice, visual language, and content architecture that makes your mission clear to every audience — before a single pixel is placed.",
+    desc: "We develop the voice, visual identity, and messaging that makes your business stand out — before a single pixel is placed.",
   },
   {
-    title: "Motion & Media Production",
-    desc: "Animations, explainer videos, and multimedia for training modules, public education campaigns, and digital communications.",
+    title: "SEO & Digital Marketing",
+    desc: "Search engine optimization, Google Business setup, and conversion-focused design that helps customers find you and choose you.",
   },
   {
     title: "Ongoing Support & Maintenance",
-    desc: "Maintenance contracts, security updates, accessibility audits, and ongoing development support to keep you current and compliant.",
+    desc: "Security updates, performance monitoring, content updates, and ongoing development support to keep your site running and ranking.",
   },
 ];
 
@@ -52,7 +52,7 @@ export default function Services() {
               transition={{ duration: 0.8, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
               className="font-[var(--font-display)] font-bold text-3xl sm:text-4xl md:text-5xl tracking-tight text-foreground leading-tight"
             >
-              Everything your organization{" "}
+              Everything your business{" "}
               <span className="text-primary">needs.</span>
             </motion.h2>
 
@@ -62,7 +62,7 @@ export default function Services() {
               transition={{ duration: 0.7, delay: 0.2 }}
               className="text-muted-foreground text-sm md:text-base leading-relaxed mt-5 max-w-sm"
             >
-              From initial discovery through post-launch support, we handle every aspect of your digital project.
+              From first conversation to post-launch support, we handle every aspect of your online presence.
             </motion.p>
           </div>
 

@@ -10,9 +10,9 @@ import { motion } from "framer-motion";
 const HERO_IMAGE = "/images/hero-diverse.jpg";
 
 const trustBadges = [
-  "WCAG 2.1 AA",
-  "ADA Title II",
-  "Section 508",
+  "Custom Design",
+  "Mobile-First",
+  "SEO Optimized",
 ];
 
 export default function Hero() {
@@ -55,7 +55,7 @@ export default function Hero() {
           >
             <div className="w-10 h-0.5 bg-[oklch(0.78_0.14_75)]" />
             <span className="text-[oklch(0.78_0.14_75)] text-xs font-semibold uppercase tracking-[0.25em]">
-              Accessible Web Design for Organizations That Matter
+              Websites That Work as Hard as You Do
             </span>
           </motion.div>
 
@@ -67,8 +67,8 @@ export default function Hero() {
             className="font-[var(--font-display)] font-extrabold text-white leading-[1.05] tracking-tight mb-8"
             style={{ fontSize: "clamp(2.8rem, 6vw, 5.5rem)" }}
           >
-            Built for organizations{" "}
-            <span className="text-primary">that mean something</span> to their communities.
+            Built for businesses{" "}
+            <span className="text-primary">that take what they do</span> seriously.
           </motion.h1>
 
           {/* Subheadline */}
@@ -78,7 +78,7 @@ export default function Hero() {
             transition={{ duration: 0.8, delay: 0.4 }}
             className="text-white/85 text-lg sm:text-xl md:text-2xl leading-relaxed mb-10 max-w-xl font-light"
           >
-            Accessible, compliant, and beautifully designed websites for governments, nonprofits, small businesses, and community organizations across North America.
+            Custom websites for local businesses — from fitness studios and wellness centres to restaurants, construction companies, and everything in between.
           </motion.p>
 
           {/* CTAs */}

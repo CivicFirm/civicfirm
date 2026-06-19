@@ -44,9 +44,9 @@ export default function MissionCTA() {
             className="font-[var(--font-display)] font-bold text-white leading-[1.15] tracking-tight mb-6"
             style={{ fontSize: "clamp(2rem, 4.5vw, 3.75rem)" }}
           >
-            Technology should serve the{" "}
-            <span className="text-primary">community</span>,
-            <br />not the other way around.
+            Your website should work{" "}
+            <span className="text-primary">as hard</span>{" "}
+            as you do.
           </motion.h2>
 
           <motion.p
@@ -55,7 +55,7 @@ export default function MissionCTA() {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="text-white/80 text-base md:text-lg leading-relaxed mb-10 max-w-2xl mx-auto"
           >
-            We understand the procurement cycles, compliance requirements, and community expectations that come with institutional work. Our process is designed to be transparent, accountable, and built for stakeholder review at every stage.
+            We understand what it takes to run a local business. Your website should bring in customers, build credibility, and make your life easier — not harder.
           </motion.p>
 
           <motion.div

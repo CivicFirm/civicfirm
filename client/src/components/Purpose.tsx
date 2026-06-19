@@ -35,14 +35,14 @@ export default function Purpose() {
             className="font-[var(--font-display)] text-foreground leading-[1.4] tracking-tight"
             style={{ fontSize: "clamp(1.5rem, 3.2vw, 2.75rem)" }}
           >
-            Too many public organizations are held back by{" "}
+            Too many great businesses are held back by{" "}
             <span className="text-[oklch(0.72_0.12_75)] italic">
-              outdated digital tools
+              websites that don't do them justice
             </span>
-            . We build the websites, platforms, and digital strategies that help
-            communities{" "}
+            . We build the sites, brands, and digital strategies that help
+            local businesses{" "}
             <span className="text-primary font-semibold">
-              connect, grow, and thrive
+              get found, build trust, and grow
             </span>{" "}
             — on their own terms.
           </motion.p>

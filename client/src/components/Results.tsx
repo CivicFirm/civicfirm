@@ -8,10 +8,10 @@ import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 
 const metrics = [
-  { value: "WCAG 2.1 AA", label: "Every Build Compliant" },
+  { value: "100%", label: "Custom Designed" },
   { value: "100%", label: "On-Time Delivery" },
-  { value: "8", label: "Sectors Served" },
-  { value: "15+", label: "Institutional Projects" },
+  { value: "8+", label: "Industries Served" },
+  { value: "20+", label: "Businesses Launched" },
 ];
 
 export default function Results() {

@@ -8,36 +8,36 @@ import { useRef, useState } from "react";
 
 const faqs = [
   {
-    q: "Do your websites meet WCAG 2.1 AA and ADA Title II requirements?",
-    a: "Yes. Accessibility is built into our process from the start — not added as an afterthought. Every site we deliver meets WCAG 2.1 Level AA standards and satisfies ADA Title II requirements for public entities. We conduct accessibility audits before launch and provide documentation of compliance.",
+    q: "How much does a website cost?",
+    a: "Most of our projects range from $3,000 to $10,000 depending on the number of pages, features, and complexity. We provide a detailed, itemized quote before any work begins — no surprises.",
   },
   {
-    q: "Can you handle .gov domain transitions?",
-    a: "Absolutely. We have experience managing the technical and DNS-level work required for transitioning from .com or .org domains to .gov, including coordinating with registrars, updating all internal links, and ensuring no disruption to existing traffic or services.",
+    q: "How long does it take to build a website?",
+    a: "Most sites launch within 3–5 weeks from kickoff. Larger projects with custom features or e-commerce can take 6–8 weeks. We set a clear timeline upfront and stick to it.",
   },
   {
-    q: "What CMS platforms do you build on?",
-    a: "We work with WordPress (including Elementor, ACF, and custom themes), Webflow, and custom CMS implementations. We select the platform based on your team's technical capacity, budget, and long-term maintenance needs. All builds include staff training and full documentation.",
+    q: "Will I be able to update my website myself?",
+    a: "Yes. Every site we build comes with an easy-to-use content management system. We train you on how to update text, images, and pages — no coding required.",
   },
   {
-    q: "Do you provide post-launch support and maintenance?",
-    a: "Yes. We offer ongoing maintenance contracts that cover security updates, plugin/module updates, accessibility audits, content updates, and technical support. We can structure these as monthly retainers or annual contracts depending on your procurement requirements.",
+    q: "Do you help with SEO and Google rankings?",
+    a: "Absolutely. Every site is built with SEO best practices — fast loading, proper meta tags, mobile optimization, and clean code. We also set up Google Analytics and Google Business Profile integration.",
   },
   {
-    q: "Can you handle content migration from our existing site?",
-    a: "Yes. Content migration is a standard part of our project scope. We audit your existing content, develop a migration plan, and handle the transfer of all pages, documents, images, and media — ensuring nothing is lost and all URLs are properly redirected.",
+    q: "Can you build online booking or e-commerce?",
+    a: "Yes. We integrate online booking systems, appointment scheduling, online ordering, and e-commerce depending on what your business needs. We'll recommend the best solution for your specific use case.",
   },
   {
-    q: "Do you build bilingual or multilingual websites?",
-    a: "Yes. We build multilingual sites with proper language switching, RTL language support where needed, and localization-ready CMS structures. We've built bilingual sites for Canadian organizations (English/French), US housing authorities (English/Spanish), and international bodies.",
+    q: "I already have a website — can you redesign it?",
+    a: "Yes. We handle full redesigns including content migration from your existing site. We'll move everything over, set up proper redirects, and make sure you don't lose any SEO value in the transition.",
   },
   {
-    q: "What does it cost to work with Civic Firm?",
-    a: "Our institutional projects typically start at $15,000 for smaller engagements (nonprofit refreshes, small municipal sites) and scale based on scope, complexity, and compliance requirements. We provide detailed, itemized proposals so procurement committees can evaluate costs transparently.",
+    q: "Do you offer ongoing support after launch?",
+    a: "Yes. We offer monthly maintenance plans that cover security updates, performance monitoring, content updates, and technical support. Most clients stay on a plan to keep things running smoothly.",
   },
   {
-    q: "How do you handle project timelines and milestones?",
-    a: "Every project includes a milestone-based timeline with defined deliverables, review periods, and approval gates. We use project management tools to keep all stakeholders informed, and we build buffer time into our schedules to account for stakeholder review cycles.",
+    q: "What makes Civic Firm different from other agencies?",
+    a: "We specialize in local service businesses — not big corporations. Every site is custom-designed (no templates), built to convert visitors into customers, and delivered on time by a team that actually picks up the phone.",
   },
 ];
 
@@ -118,8 +118,8 @@ export default function FAQ() {
               transition={{ duration: 0.8, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
               className="font-[var(--font-display)] font-extrabold text-3xl sm:text-4xl lg:text-5xl tracking-tight text-foreground leading-[1.1] mb-6"
             >
-              Questions from<br />
-              <span className="text-primary">procurement.</span>
+              Common questions<br />
+              <span className="text-primary">from business owners.</span>
             </motion.h2>
 
             <motion.p
@@ -128,7 +128,7 @@ export default function FAQ() {
               transition={{ duration: 0.7, delay: 0.3 }}
               className="text-muted-foreground text-sm leading-relaxed"
             >
-              Answers to the questions that matter most to institutional decision-makers and project stakeholders.
+              Straight answers for business owners who want to know what they're getting.
             </motion.p>
           </div>
 

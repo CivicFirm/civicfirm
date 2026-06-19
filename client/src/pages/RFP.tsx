@@ -22,66 +22,62 @@ const CTA_BG = "/images/mission-community.jpg";
 const howWeWork = [
   {
     num: "01",
-    title: "We Understand Your Mission",
-    desc: "Every engagement starts with listening. We learn your organization's goals, stakeholders, compliance requirements, and community context before proposing a single solution.",
-    detail: "We conduct stakeholder interviews, review existing materials, and map your community's needs to ensure our approach is grounded in your reality — not assumptions.",
+    title: "We Learn Your Business",
+    desc: "Every project starts with understanding — your business, your customers, your goals, and what's not working with your current online presence.",
+    detail: "We look at your competitors, your market, and your brand to make sure we're building something that actually works for your specific business.",
   },
   {
     num: "02",
-    title: "We Analyze the Requirements",
-    desc: "Whether it's a formal procurement process or a direct engagement, we study every requirement — compliance standards, evaluation criteria, scope, timeline, and budget.",
-    detail: "We break down RFPs line by line, cross-reference with industry standards, and identify opportunities to exceed expectations while staying within scope.",
+    title: "We Map Out the Plan",
+    desc: "We put together a clear plan — pages, features, timeline, and cost. You know exactly what you're getting before we start.",
+    detail: "No vague proposals. Every deliverable is mapped to a milestone so you can track progress and know what's coming next.",
   },
   {
     num: "03",
-    title: "We Build a Tailored Plan",
-    desc: "Our proposals are not templates. Each plan is written specifically for the issuing organization — addressing stated goals, compliance requirements, and success criteria.",
-    detail: "Every deliverable is mapped to a milestone. Every milestone has a review gate. Your team has full visibility into progress at every stage.",
+    title: "We Design It Custom",
+    desc: "No templates. We design your site from scratch based on your brand, your industry, and what converts in your market.",
+    detail: "You see mockups before we write a single line of code — and you approve every design decision.",
   },
   {
     num: "04",
-    title: "We Demonstrate Compliance",
-    desc: "Government and institutional projects require documented proof of standards — WCAG 2.1 AA, ADA Title II, Section 508, mobile-first design, CMS training.",
-    detail: "We include accessibility audits, compliance documentation, and testing reports as standard deliverables — not add-ons.",
+    title: "We Build It Right",
+    desc: "Fast-loading, mobile-first, SEO-optimized code. Every site is built to perform on Google and convert visitors into customers.",
+    detail: "We handle hosting, SSL, domain setup, analytics, and everything else — so you don't have to.",
   },
   {
     num: "05",
-    title: "We Deliver — On Time, On Spec",
-    desc: "We execute with rigor: milestone-based delivery, stakeholder review gates, documented deliverables, and proactive communication throughout.",
-    detail: "No surprises, no scope creep. If something changes, we communicate it immediately and adjust the plan together.",
+    title: "We Launch It Smoothly",
+    desc: "We test on every device, set up your SEO, connect your analytics, and launch with zero downtime.",
+    detail: "If you have an existing site, we handle the full migration — content, images, redirects, everything.",
   },
   {
     num: "06",
     title: "We Stay After Launch",
-    desc: "Our engagements include post-launch support, staff training, documentation, and ongoing maintenance options.",
-    detail: "We build long-term relationships, not one-off deliveries. Your team will be fully trained and confident managing your new platform.",
+    desc: "We train you on how to update your site, and offer ongoing maintenance plans to keep everything running.",
+    detail: "We build long-term relationships, not one-off deliveries. Most of our clients stay with us.",
   },
 ];
 
 const credentials = [
-  { title: "WCAG 2.1 AA", desc: "Full accessibility compliance on every build" },
-  { title: "ADA Title II", desc: "Federal compliance for public entities" },
-  { title: "Section 508", desc: "Federal technology accessibility standards" },
+  { title: "Custom Design", desc: "Every site designed from scratch — no templates" },
   { title: "Mobile-First", desc: "Responsive design tested across all devices" },
-  { title: "CMS Training", desc: "Full staff training and documentation included" },
-  { title: "Content Migration", desc: "Seamless transition from legacy systems" },
-  { title: "Bilingual / Multilingual", desc: "Language access and localization-ready builds" },
-  { title: "Post-Launch Support", desc: "Ongoing maintenance contracts available" },
+  { title: "SEO Optimized", desc: "Built to rank on Google from day one" },
+  { title: "Fast Loading", desc: "Performance-optimized for speed and conversions" },
+  { title: "Easy to Update", desc: "Content management system with full training" },
+  { title: "Analytics Ready", desc: "Google Analytics and conversion tracking included" },
+  { title: "SSL & Security", desc: "Secure hosting with SSL certificates included" },
+  { title: "Post-Launch Support", desc: "Ongoing maintenance plans available" },
 ];
 
 const sectors = [
-  "Small Business & Local Enterprise",
-  "Municipal / City Government",
-  "County Government",
-  "State / Provincial Agency",
-  "K–12 School District",
-  "Post-Secondary Institution",
-  "Nonprofit Organization",
-  "Indigenous / First Nations Organization",
-  "Housing Authority",
-  "Healthcare / Public Health",
-  "Arts, Culture & Heritage",
-  "Professional Association",
+  "Health & Wellness",
+  "Fitness & Training",
+  "Construction & Trades",
+  "Food & Restaurant",
+  "Childcare & Education",
+  "Financial Services",
+  "Retail & E-Commerce",
+  "Home Services & Delivery",
 ];
 
 export default function RFP() {
@@ -100,6 +96,7 @@ export default function RFP() {
   return (
     <div className="min-h-screen bg-background text-foreground">
       <Navbar />
+      <main id="main-content">
 
       {/* ─── HERO — centered, solid dark bg, no photo (distinct from homepage left-aligned photo hero) ─── */}
       <section className="relative bg-[oklch(0.14_0.04_155)] overflow-hidden">
@@ -159,7 +156,7 @@ export default function RFP() {
               transition={{ duration: 0.8, delay: 0.4 }}
               className="text-white/70 text-base sm:text-lg md:text-xl leading-relaxed mb-12 max-w-2xl mx-auto font-light"
             >
-              Civic Firm partners with government, education, nonprofit, and Indigenous organizations across Canada and the United States. Our approach is built around accountability, compliance, and the standards your stakeholders expect.
+              Civic Firm builds custom websites for local businesses across Canada and the United States. Our approach is built around understanding your customers, designing for conversion, and delivering on time.
             </motion.p>
 
             {/* Stats row — unique to this page */}
@@ -170,9 +167,9 @@ export default function RFP() {
               className="grid grid-cols-3 gap-8 max-w-lg mx-auto"
             >
               {[
-                { number: "100%", label: "WCAG Compliant" },
+                { number: "100%", label: "Custom Designed" },
                 { number: "6", label: "Step Process" },
-                { number: "12", label: "Sectors Served" },
+                { number: "8+", label: "Industries Served" },
               ].map((stat) => (
                 <div key={stat.label} className="text-center">
                   <div className="text-primary font-bold text-2xl md:text-3xl tracking-tight">{stat.number}</div>
@@ -219,7 +216,7 @@ export default function RFP() {
                 transition={{ duration: 0.7, delay: 0.2 }}
                 className="text-muted-foreground text-sm md:text-base leading-relaxed mt-5 max-w-sm"
               >
-                Click any step to learn more about how we approach institutional projects with the rigor and accountability your organization requires.
+                Click any step to see how we take your project from idea to launch — with clear milestones and no surprises.
               </motion.p>
             </div>
 
@@ -294,7 +291,7 @@ export default function RFP() {
             <div className="flex items-center justify-center gap-3 mb-4">
               <div className="w-8 h-0.5 bg-[oklch(0.72_0.12_75)]" />
               <span className="text-[oklch(0.78_0.14_75)] text-xs font-semibold uppercase tracking-[0.2em]">
-                Standards & Credentials
+                What You Get
               </span>
               <div className="w-8 h-0.5 bg-[oklch(0.72_0.12_75)]" />
             </div>
@@ -305,7 +302,7 @@ export default function RFP() {
               transition={{ duration: 0.8, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
               className="font-[var(--font-display)] font-bold text-3xl sm:text-4xl md:text-5xl tracking-tight text-white"
             >
-              Built to meet <span className="text-[oklch(0.60_0.16_150)]">every</span> requirement.
+              Built to <span className="text-[oklch(0.60_0.16_150)]">perform</span> from day one.
             </motion.h2>
           </motion.div>
 
@@ -367,7 +364,7 @@ export default function RFP() {
               className="flex items-center justify-center gap-3 mb-4"
             >
               <div className="w-8 h-0.5 bg-[oklch(0.72_0.12_75)]" />
-              <span className="section-label">Sectors We Serve</span>
+              <span className="section-label">Industries We Serve</span>
               <div className="w-8 h-0.5 bg-[oklch(0.72_0.12_75)]" />
             </motion.div>
 
@@ -377,7 +374,7 @@ export default function RFP() {
               transition={{ duration: 0.8, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
               className="font-[var(--font-display)] font-bold text-3xl sm:text-4xl md:text-5xl tracking-tight text-foreground"
             >
-              Trusted across <span className="text-primary">12 sectors</span> in North America.
+              Built for businesses <span className="text-primary">across every industry.</span>
             </motion.h2>
 
             <motion.p
@@ -386,7 +383,7 @@ export default function RFP() {
               transition={{ duration: 0.7, delay: 0.2 }}
               className="text-muted-foreground text-sm md:text-base leading-relaxed mt-4"
             >
-              From procurement cycles to community expectations — we tailor our approach to the unique needs of each organization we serve.
+              Whether you're a one-location shop or a growing brand — we tailor our approach to the unique needs of your business.
             </motion.p>
           </div>
 
@@ -460,7 +457,7 @@ export default function RFP() {
               transition={{ duration: 0.8, delay: 0.3 }}
               className="text-white/75 text-base sm:text-lg leading-relaxed mb-10 max-w-xl mx-auto"
             >
-              Whether you're issuing an RFP, evaluating vendors, or exploring a direct engagement — we'd love to hear from you.
+              Whether you need a new website, a redesign, or a digital partner who gets local business — we'd love to hear from you.
             </motion.p>
 
             <motion.div
@@ -504,6 +501,7 @@ export default function RFP() {
           </div>
         </div>
       </section>
+      </main>
 
       <Footer />
     </div>
