@@ -43,9 +43,9 @@ export function TeamCard({ member, index }: { member: (typeof team)[0]; index: n
       initial={{ opacity: 0, y: 30 }}
       animate={isInView ? { opacity: 1, y: 0 } : {}}
       transition={{ duration: 0.6, delay: index * 0.08, ease: [0.16, 1, 0.3, 1] }}
-      className="group flex flex-col sm:flex-row gap-5 sm:gap-6"
+      className="group"
     >
-      <div className="relative overflow-hidden aspect-square rounded-lg flex-shrink-0 w-full sm:w-52 md:w-56">
+      <div className="relative overflow-hidden aspect-square mb-4 rounded-lg">
         <img
           src={member.image}
           alt={member.name}
@@ -53,7 +53,7 @@ export function TeamCard({ member, index }: { member: (typeof team)[0]; index: n
         />
         <div className="absolute bottom-0 left-0 right-0 h-1 bg-[oklch(0.72_0.12_75)] md:scale-x-0 md:group-hover:scale-x-100 transition-transform duration-500 origin-left" />
       </div>
-      <div className="flex flex-col justify-center min-w-0">
+      <div>
         <h4 className="font-[var(--font-display)] font-semibold text-foreground text-sm md:text-base tracking-tight">
           {member.name}
         </h4>

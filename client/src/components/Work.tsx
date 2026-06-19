@@ -16,9 +16,9 @@ export const projects = [
     summary:
       "A sleek, conversion-focused website for Toronto's top cold plunge and recovery facility — featuring online booking, service breakdowns, and membership options.",
     image: "/portfolio/torontocoldplunge-hero.png",
-    url: "https://torontocoldplunge.com",
+    url: "https://torontocoldplunge.ca",
     accent: "#38bdf8",
-    featured: true,
+    featured: false,
   },
   {
     name: "Pure Thai",
@@ -39,7 +39,7 @@ export const projects = [
       "A polished, modern website for a wellness clinic — featuring treatment information, online booking, and a clean aesthetic that reflects personalized care.",
     image: "/portfolio/gogowellness-hero.png",
     url: "https://gogowellnessclinic.com",
-    accent: "#2a7a6a",
+    accent: "#5ec4a8",
     featured: false,
   },
   {
@@ -83,7 +83,7 @@ export const projects = [
       "A professional, trust-building website for a mortgage lender — designed to generate leads, explain products, and build confidence.",
     image: "/portfolio/lendia-hero.png",
     url: "https://lendia.ca",
-    accent: "#10b981",
+    accent: "#d4a44c",
     featured: false,
   },
 ];

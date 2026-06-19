@@ -70,9 +70,7 @@ export default function Navbar() {
     // For non-hash links (like /rfp), let the default behavior work
   }, [location, setLocation]);
 
-  const navBg = scrolled || isRFPPage || menuOpen
-    ? "bg-[oklch(0.985_0.008_85)] dark:bg-[oklch(0.18_0.04_155)] shadow-sm border-b border-[oklch(0.89_0.015_80)] dark:border-[oklch(0.30_0.03_155)]"
-    : "bg-transparent";
+  const navBg = "bg-[oklch(0.985_0.008_85)] dark:bg-[oklch(0.18_0.04_155)] shadow-sm border-b border-[oklch(0.89_0.015_80)] dark:border-[oklch(0.30_0.03_155)]";
 
   const linkBaseClass = (isScrolledOrRFP: boolean) =>
     isScrolledOrRFP
@@ -90,7 +88,7 @@ export default function Navbar() {
             <Link href="/">
               <a className="flex items-center gap-2.5 flex-shrink-0">
                 <img
-                  src={scrolled || isRFPPage || menuOpen ? "/logo-light.png" : "/logo-dark.png"}
+                  src="/logo-light.png"
                   alt="Civic Firm"
                   className="h-8 w-auto object-contain"
                   style={{ maxWidth: '200px' }}
@@ -105,7 +103,7 @@ export default function Navbar() {
                   key={link.label}
                   href={link.href}
                   onClick={(e) => handleNavClick(e, link.href)}
-                  className={`text-sm font-medium px-3 py-2 rounded-md transition-colors ${linkBaseClass(scrolled || isRFPPage)}`}
+                  className={`text-sm font-medium px-3 py-2 rounded-md transition-colors ${linkBaseClass(true)}`}
                 >
                   {link.label}
                 </a>
@@ -119,9 +117,7 @@ export default function Navbar() {
                 onClick={toggleTheme}
                 aria-label="Toggle theme"
                 className={`w-9 h-9 rounded-full flex items-center justify-center transition-colors ${
-                  scrolled || isRFPPage
-                    ? "hover:bg-gray-100 dark:hover:bg-[oklch(0.26_0.03_155)] text-[oklch(0.35_0.02_75)] dark:text-[oklch(0.7_0.01_80)]"
-                    : "hover:bg-white/10 text-white/80"
+                  "hover:bg-gray-100 dark:hover:bg-[oklch(0.26_0.03_155)] text-[oklch(0.35_0.02_75)] dark:text-[oklch(0.7_0.01_80)]"
                 }`}
               >
                 {theme === "dark" ? (
@@ -149,7 +145,7 @@ export default function Navbar() {
               onClick={() => setMenuOpen(!menuOpen)}
               aria-label="Toggle menu"
               className={`md:hidden w-9 h-9 flex flex-col items-center justify-center gap-1.5 transition-colors ${
-                scrolled || isRFPPage || menuOpen ? "text-[oklch(0.22_0.02_75)] dark:text-white" : "text-white"
+"text-[oklch(0.22_0.02_75)] dark:text-white"
               }`}
             >
               <span className={`block h-0.5 bg-current transition-all duration-300 ${menuOpen ? "w-5 rotate-45 translate-y-2" : "w-5"}`} />
