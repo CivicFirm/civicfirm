@@ -14,12 +14,6 @@ export const team = [
     image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663407421710/CU5JQUQHP3FutNoS5xA4np/reza-amari_6e0b802d.png",
   },
   {
-    name: "Dr. Jason Bruce",
-    role: "Chief Technology Officer",
-    bio: "Oversees all technical architecture, platform decisions, and development standards. Ensures every project is built on modern, scalable infrastructure that performs.",
-    image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663407421710/CU5JQUQHP3FutNoS5xA4np/jason-bruce_24906696.png",
-  },
-  {
     name: "Brian Lee",
     role: "Lead Developer & Technical Architect",
     bio: "Builds and maintains the technical infrastructure behind every project. Specializes in full-stack development, performance optimization, and secure deployment for public-sector platforms.",
@@ -43,9 +37,9 @@ export function TeamCard({ member, index }: { member: (typeof team)[0]; index: n
       initial={{ opacity: 0, y: 30 }}
       animate={isInView ? { opacity: 1, y: 0 } : {}}
       transition={{ duration: 0.6, delay: index * 0.08, ease: [0.16, 1, 0.3, 1] }}
-      className="group flex gap-5 sm:gap-6"
+      className="group flex flex-col"
     >
-      <div className="relative overflow-hidden aspect-square rounded-lg flex-shrink-0 w-40 sm:w-48 md:w-56">
+      <div className="relative overflow-hidden aspect-[3/4] rounded-lg mb-4">
         <img
           src={member.image}
           alt={member.name}
@@ -53,17 +47,15 @@ export function TeamCard({ member, index }: { member: (typeof team)[0]; index: n
         />
         <div className="absolute bottom-0 left-0 right-0 h-1 bg-[oklch(0.72_0.12_75)] md:scale-x-0 md:group-hover:scale-x-100 transition-transform duration-500 origin-left" />
       </div>
-      <div className="flex flex-col justify-center min-w-0">
-        <h4 className="font-[var(--font-display)] font-semibold text-foreground text-sm md:text-base tracking-tight">
-          {member.name}
-        </h4>
-        <p className="text-primary text-xs font-medium mt-0.5 mb-2">
-          {member.role}
-        </p>
-        <p className="text-muted-foreground text-xs leading-relaxed">
-          {member.bio}
-        </p>
-      </div>
+      <h4 className="font-[var(--font-display)] font-semibold text-foreground text-sm md:text-base tracking-tight">
+        {member.name}
+      </h4>
+      <p className="text-primary text-xs font-medium mt-0.5 mb-2">
+        {member.role}
+      </p>
+      <p className="text-muted-foreground text-xs leading-relaxed">
+        {member.bio}
+      </p>
     </motion.div>
   );
 }
@@ -94,8 +86,8 @@ export default function Team() {
               transition={{ duration: 0.8, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
               className="font-[var(--font-display)] font-bold text-3xl sm:text-4xl md:text-5xl tracking-tight text-foreground"
             >
-              The people behind{" "}
-              <span className="text-primary">the work.</span>
+              Meet some of{" "}
+              <span className="text-primary">our team.</span>
             </motion.h2>
           </div>
 
@@ -108,14 +100,11 @@ export default function Team() {
             <p className="text-muted-foreground text-sm leading-relaxed">
               Strategy, design, development, and delivery — backed by a broader network of specialists.
             </p>
-            <p className="text-muted-foreground/60 text-xs mt-2 italic">
-              A few of the people behind the work.
-            </p>
           </motion.div>
         </div>
 
-        {/* 2x2 grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 md:gap-10">
+        {/* 3-column grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 md:gap-10">
           {team.map((member, i) => (
             <TeamCard key={member.name} member={member} index={i} />
           ))}

@@ -2,9 +2,8 @@
  * DESIGN: Kinetic Brutalism — Marquee Ticker
  * Horizontal scrolling text divider between sections.
  * Uppercase, spaced, muted color. Continuous loop.
- * Theme-aware: uses semantic border/bg.
+ * Uses CSS animation for reliable mobile support.
  */
-import { motion, useReducedMotion } from "framer-motion";
 
 interface MarqueeProps {
   items: string[];
@@ -13,9 +12,7 @@ interface MarqueeProps {
 }
 
 export default function Marquee({ items, speed = 30, separator = "\u2014" }: MarqueeProps) {
-  const prefersReducedMotion = useReducedMotion();
   const text = items.join(` ${separator} `) + ` ${separator} `;
-  const doubled = text + text;
 
   return (
     <div
@@ -23,15 +20,19 @@ export default function Marquee({ items, speed = 30, separator = "\u2014" }: Mar
       aria-hidden="true"
       role="presentation"
     >
-      <motion.div
-        animate={prefersReducedMotion ? {} : { x: [0, `-50%`] }}
-        transition={{ duration: speed, repeat: Infinity, ease: "linear" }}
-        className="whitespace-nowrap"
+      <div
+        className="whitespace-nowrap inline-flex"
+        style={{
+          animation: `marquee-scroll ${speed}s linear infinite`,
+        }}
       >
         <span className="text-sm md:text-base uppercase tracking-[0.25em] text-muted-foreground font-medium">
-          {doubled}
+          {text}
         </span>
-      </motion.div>
+        <span className="text-sm md:text-base uppercase tracking-[0.25em] text-muted-foreground font-medium">
+          {text}
+        </span>
+      </div>
     </div>
   );
 }
