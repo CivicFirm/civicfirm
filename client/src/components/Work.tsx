@@ -32,14 +32,14 @@ const projects = [
     featured: true,
   },
   {
-    name: "GoGo Muscle Training",
-    sector: "Fitness & Training",
-    descriptor: "EMS fitness studio",
+    name: "GoGo Wellness Clinic",
+    sector: "Wellness & Beauty",
+    descriptor: "Holistic wellness clinic",
     summary:
-      "A high-energy website for an EMS training studio — built to explain the technology, showcase results, and convert visitors into members.",
-    image: "/portfolio/gogomuscle-hero.png",
-    url: "https://gogomuscletraining.com",
-    accent: "#f97316",
+      "A polished, modern website for a wellness clinic — featuring treatment information, online booking, and a clean aesthetic that reflects personalized care.",
+    image: "/portfolio/gogowellness-hero.png",
+    url: "https://gogowellnessclinic.com",
+    accent: "#2a7a6a",
     featured: false,
   },
   {
@@ -48,7 +48,7 @@ const projects = [
     descriptor: "Early learning centre",
     summary:
       "A warm, trust-building website for a licensed early learning centre — designed to drive enrollment and communicate with families.",
-    image: "/portfolio/tucsontots-hero.png",
+    image: "/portfolio/tucsontots-hero-new.png",
     url: "https://tucsontots.com",
     accent: "#ffc83c",
     featured: false,
