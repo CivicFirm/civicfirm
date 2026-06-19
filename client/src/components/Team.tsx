@@ -65,7 +65,7 @@ export default function Team() {
   const headInView = useInView(headRef, { once: true, margin: "-100px" });
 
   return (
-    <section id="team" className="pb-10 md:pb-14 bg-background">
+    <section id="team" className="pb-6 md:pb-8 bg-background">
       <div className="container">
         {/* Header */}
         <div ref={headRef} className="flex flex-col md:flex-row md:items-end md:justify-between mb-10 md:mb-14">
