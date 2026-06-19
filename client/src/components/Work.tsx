@@ -95,7 +95,7 @@ export const projects = [
     image: "/portfolio/beckers-hero.png",
     url: "https://beckersbridals.ca",
     accent: "#d4a574",
-    featured: false,
+    featured: true,
   },
 ];
 
