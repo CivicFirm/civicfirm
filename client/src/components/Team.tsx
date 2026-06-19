@@ -2,7 +2,7 @@
  * DESIGN: Institutional — Team Section
  * Dark background. Clean team cards.
  * Photos: grayscale on desktop until hover.
- * 6 members: uniform 3-column grid, 2 rows of 3.
+ * 5 members: grid layout.
  * Subtitle clarifies this is not the full team.
  */
 import { motion, useInView } from "framer-motion";
@@ -12,18 +12,12 @@ const team = [
   /* ── Row 1 ── */
   {
     name: "Dr. Jason Bruce",
-    role: "Co-Founder & Chief Executive Officer",
+    role: "Founder & Chief Executive Officer",
     bio: "Leads all client strategy, institutional partnerships, and business development. Specialist in accessible digital transformation for public-sector organizations across North America.",
     image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663407421710/CU5JQUQHP3FutNoS5xA4np/jason-bruce_24906696.png",
   },
   {
-    name: "Dr. Marisol Campos Navarrete",
-    role: "Co-Founder & Director of Content Strategy",
-    bio: "Leads content architecture, instructional design, and user-focused content strategy across all projects. Specializes in translating complex subject matter into clear, accessible digital experiences for public and institutional audiences.",
-    image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663407421710/CU5JQUQHP3FutNoS5xA4np/marisol-navarrete_4717efd6.png",
-  },
-  {
-    name: "Ray Amari, M.Mgt.",
+    name: "Reza Amari, M.Mgt.",
     role: "Director of Operations & Delivery",
     bio: "Manages project timelines, budgets, and milestone delivery across all active engagements. Ensures every project ships on time, on scope, and within budget.",
     image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663407421710/CU5JQUQHP3FutNoS5xA4np/reza-amari_6e0b802d.png",
