@@ -10,6 +10,7 @@ export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
+    <>
     <footer className="bg-[oklch(0.18_0.04_155)] border-t border-[oklch(0.26_0.03_155)]" role="contentinfo">
       <div className="container py-14">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-10 md:gap-8">
@@ -140,5 +141,21 @@ export default function Footer() {
         </div>
       </div>
     </footer>
+
+    {/* Developed by Mentee */}
+    <div style={{ backgroundColor: "oklch(0.95 0.015 70)", borderTop: "1px solid oklch(0.88 0.02 70)" }}>
+      <div className="container py-5 flex items-center justify-center gap-4">
+        <span
+          className="text-xs uppercase font-medium"
+          style={{ letterSpacing: "0.25em", color: "oklch(0.45 0.04 40)" }}
+        >
+          Developed by
+        </span>
+        <a href="https://mentee.ca" target="_blank" rel="noopener noreferrer" className="hover:opacity-80 transition-opacity">
+          <img src="/images/mentee.png" alt="Mentee" className="h-8 w-auto" />
+        </a>
+      </div>
+    </div>
+    </>
   );
 }
