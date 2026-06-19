@@ -4,8 +4,8 @@ import Navbar from "@/components/Navbar";
 import { team, TeamCard } from "@/components/Team";
 import Footer from "@/components/Footer";
 
-const leadership = team.slice(0, 3);
-const technical = team.slice(3);
+const leadership = team.slice(0, 2);
+const technical = team.slice(2);
 
 const tabs = [
   { id: "leadership", label: "Leadership", bg: "bg-background" },

@@ -1,15 +1,12 @@
 /*
  * DESIGN: Institutional — Team Section
- * Dark background. Clean team cards.
+ * 2x2 grid with photo + text side by side.
  * Photos: grayscale on desktop until hover.
- * 5 members: grid layout.
- * Subtitle clarifies this is not the full team.
  */
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 
 export const team = [
-  /* ── Row 1 ── */
   {
     name: "Reza Amari, M.Mgt.",
     role: "Founder & Chief Executive Officer",
@@ -22,7 +19,6 @@ export const team = [
     bio: "Oversees all technical architecture, platform decisions, and development standards. Ensures every project is built on modern, scalable infrastructure that performs.",
     image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663407421710/CU5JQUQHP3FutNoS5xA4np/jason-bruce_24906696.png",
   },
-  /* ── Row 2 ── */
   {
     name: "Brian Lee",
     role: "Lead Developer & Technical Architect",
@@ -34,12 +30,6 @@ export const team = [
     role: "Lead UX Designer & Front-End Developer",
     bio: "Designs user interfaces and builds responsive front-end experiences. Translates wireframes into accessible, pixel-perfect code that meets WCAG standards across all devices.",
     image: "/images/team-kathrina.png",
-  },
-  {
-    name: "Mazen Cheikh",
-    role: "Director of Compliance & Accessibility",
-    bio: "Oversees WCAG 2.1 AA, ADA Title II, and Section 508 compliance across all projects. Conducts accessibility audits, remediation planning, and standards documentation.",
-    image: "/images/team-mazen.png",
   },
 ];
 
@@ -53,26 +43,27 @@ export function TeamCard({ member, index }: { member: (typeof team)[0]; index: n
       initial={{ opacity: 0, y: 30 }}
       animate={isInView ? { opacity: 1, y: 0 } : {}}
       transition={{ duration: 0.6, delay: index * 0.08, ease: [0.16, 1, 0.3, 1] }}
-      className="group"
+      className="group flex gap-5 sm:gap-6"
     >
-      <div className="relative overflow-hidden aspect-square mb-4 rounded-lg">
+      <div className="relative overflow-hidden w-28 h-28 sm:w-36 sm:h-36 flex-shrink-0 rounded-lg">
         <img
           src={member.image}
           alt={member.name}
           className="w-full h-full object-cover object-top transition-all duration-700 md:grayscale md:group-hover:grayscale-0 md:group-hover:scale-105"
         />
-        {/* Accent bar: always visible on mobile, hover-revealed on desktop */}
         <div className="absolute bottom-0 left-0 right-0 h-1 bg-[oklch(0.72_0.12_75)] md:scale-x-0 md:group-hover:scale-x-100 transition-transform duration-500 origin-left" />
       </div>
-      <h4 className="font-[var(--font-display)] font-semibold text-foreground text-sm md:text-base tracking-tight">
-        {member.name}
-      </h4>
-      <p className="text-primary text-xs font-medium mt-0.5 mb-2">
-        {member.role}
-      </p>
-      <p className="text-muted-foreground text-xs leading-relaxed">
-        {member.bio}
-      </p>
+      <div className="flex flex-col justify-center min-w-0">
+        <h4 className="font-[var(--font-display)] font-semibold text-foreground text-sm md:text-base tracking-tight">
+          {member.name}
+        </h4>
+        <p className="text-primary text-xs font-medium mt-0.5 mb-2">
+          {member.role}
+        </p>
+        <p className="text-muted-foreground text-xs leading-relaxed">
+          {member.bio}
+        </p>
+      </div>
     </motion.div>
   );
 }
@@ -115,7 +106,7 @@ export default function Team() {
             className="mt-4 md:mt-0 max-w-xs"
           >
             <p className="text-muted-foreground text-sm leading-relaxed">
-              Our leadership team brings together strategy, compliance, design, development, and delivery — backed by a broader network of specialists.
+              Our leadership team brings together strategy, design, development, and delivery — backed by a broader network of specialists.
             </p>
             <p className="text-muted-foreground/60 text-xs mt-2 italic">
               Introducing our leadership — not the whole team.
@@ -123,8 +114,8 @@ export default function Team() {
           </motion.div>
         </div>
 
-        {/* Uniform 3-column grid — 2 rows of 3 */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 md:gap-10">
+        {/* 2x2 grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 md:gap-10">
           {team.map((member, i) => (
             <TeamCard key={member.name} member={member} index={i} />
           ))}
