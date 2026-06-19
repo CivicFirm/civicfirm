@@ -11,16 +11,16 @@ import { useRef } from "react";
 const team = [
   /* ── Row 1 ── */
   {
-    name: "Dr. Jason Bruce",
+    name: "Reza Amari, M.Mgt.",
     role: "Founder & Chief Executive Officer",
-    bio: "Leads all client strategy, institutional partnerships, and business development. Specialist in accessible digital transformation for public-sector organizations across North America.",
-    image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663407421710/CU5JQUQHP3FutNoS5xA4np/jason-bruce_24906696.png",
+    bio: "Leads business strategy, client partnerships, and growth across all verticals. Specialist in building high-performing digital teams and delivering results for local businesses.",
+    image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663407421710/CU5JQUQHP3FutNoS5xA4np/reza-amari_6e0b802d.png",
   },
   {
-    name: "Reza Amari, M.Mgt.",
-    role: "Director of Operations & Delivery",
-    bio: "Manages project timelines, budgets, and milestone delivery across all active engagements. Ensures every project ships on time, on scope, and within budget.",
-    image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663407421710/CU5JQUQHP3FutNoS5xA4np/reza-amari_6e0b802d.png",
+    name: "Dr. Jason Bruce",
+    role: "Chief Technology Officer",
+    bio: "Oversees all technical architecture, platform decisions, and development standards. Ensures every project is built on modern, scalable infrastructure that performs.",
+    image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663407421710/CU5JQUQHP3FutNoS5xA4np/jason-bruce_24906696.png",
   },
   /* ── Row 2 ── */
   {

@@ -86,6 +86,17 @@ const projects = [
     accent: "#10b981",
     featured: false,
   },
+  {
+    name: "Becker's Bridal",
+    sector: "Retail & Bridal",
+    descriptor: "Toronto's oldest bridal boutique",
+    summary:
+      "An elegant, appointment-driven website for a heritage bridal boutique — celebrating 80+ years of trust with modern booking and collection showcases.",
+    image: "/portfolio/beckers-hero.png",
+    url: "https://beckersbridals.ca",
+    accent: "#d4a574",
+    featured: false,
+  },
 ];
 
 function ProjectCard({
@@ -129,24 +140,6 @@ function ProjectCard({
           className="w-full h-full object-cover object-center transition-transform duration-700 group-hover:scale-[1.03]"
           loading="lazy"
         />
-
-        {/* Subtle vignette at top for sector pill readability */}
-        <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-transparent to-transparent pointer-events-none" />
-
-        {/* Sector pill — top left */}
-        <div className="absolute top-3 left-3 md:top-4 md:left-5">
-          <span
-            className="inline-block text-[10px] md:text-[11px] uppercase tracking-[0.14em] font-bold px-3 py-1.5 rounded-full"
-            style={{
-              background: `rgba(0,0,0,0.75)`,
-              color: '#ffffff',
-              border: `1px solid rgba(255,255,255,0.2)`,
-              backdropFilter: 'blur(8px)',
-            }}
-          >
-            {project.sector}
-          </span>
-        </div>
 
         {/* Arrow — top right, appears on hover */}
         <div className="absolute top-3 right-3 md:top-4 md:right-5 w-9 h-9 rounded-full border border-white/25 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300 backdrop-blur-sm bg-white/10">
@@ -258,7 +251,7 @@ export default function Work() {
         </div>
 
         {/* Featured row — 2 cards side by side */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 mb-6 md:mb-8">
           {featured.map((project, i) => (
             <ProjectCard
               key={project.name}
@@ -270,7 +263,7 @@ export default function Work() {
         </div>
 
         {/* Standard row — 3 equal cards */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
           {standard.map((project, i) => (
             <ProjectCard
               key={project.name}
