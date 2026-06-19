@@ -68,7 +68,7 @@ export default function Hero() {
             style={{ fontSize: "clamp(2.8rem, 6vw, 5.5rem)" }}
           >
             Built for businesses{" "}
-            <span className="text-primary">that take what they do</span> seriously.
+            <span className="text-[#4ade80]">that take what they do</span> seriously.
           </motion.h1>
 
           {/* Subheadline */}

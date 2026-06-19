@@ -93,7 +93,7 @@ export const projects = [
     summary:
       "An elegant, appointment-driven website for a heritage bridal boutique — celebrating 80+ years of trust with modern booking and collection showcases.",
     image: "/portfolio/beckers-hero.png",
-    url: "https://beckersbridals.ca",
+    url: "",
     accent: "#d4a574",
     featured: true,
   },
@@ -114,9 +114,10 @@ export function ProjectCard({
   return (
     <motion.a
       ref={ref}
-      href={project.url}
-      target="_blank"
-      rel="noopener noreferrer"
+      href={project.url || undefined}
+      target={project.url ? "_blank" : undefined}
+      rel={project.url ? "noopener noreferrer" : undefined}
+      style={project.url ? undefined : { cursor: "default" }}
       initial={{ opacity: 0, y: 32 }}
       animate={isInView ? { opacity: 1, y: 0 } : {}}
       transition={{
@@ -124,7 +125,7 @@ export function ProjectCard({
         delay: index * 0.08,
         ease: [0.16, 1, 0.3, 1],
       }}
-      className="group relative block overflow-hidden rounded-xl bg-[oklch(0.18_0.03_155)] border border-white/10 hover:border-white/25 transition-all duration-500 hover:shadow-[0_8px_32px_rgba(255,255,255,0.06)]"
+      className="group relative block overflow-hidden rounded-xl bg-[oklch(0.18_0.03_155)] border border-white/[0.12] hover:border-white/30 transition-all duration-500 shadow-[0_2px_12px_rgba(0,0,0,0.3)] hover:shadow-[0_12px_40px_rgba(255,255,255,0.08)]"
     >
       {/* Image — uses object-cover with center positioning so nothing important gets cut */}
       <div
@@ -235,7 +236,7 @@ export default function Work() {
               className="font-[var(--font-display)] font-bold text-3xl sm:text-4xl md:text-5xl tracking-tight text-white"
             >
               Work that{" "}
-              <span className="text-primary">speaks for itself.</span>
+              <span className="text-[#4ade80]">speaks for itself.</span>
             </motion.h2>
           </div>
 

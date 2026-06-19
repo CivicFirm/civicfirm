@@ -47,7 +47,7 @@ export default function Compliance() {
               className="font-[var(--font-display)] font-bold text-3xl sm:text-4xl md:text-5xl tracking-tight text-white leading-tight"
             >
               Built to meet{" "}
-              <span className="text-primary">every</span>{" "}
+              <span className="text-[#4ade80]">every</span>{" "}
               requirement.
             </motion.h2>
 
