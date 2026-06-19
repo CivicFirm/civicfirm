@@ -7,7 +7,7 @@
  */
 import { motion } from "framer-motion";
 
-const HERO_IMAGE = "/images/hero-diverse.jpg";
+const HERO_IMAGE = "/images/hero-civicfirm.png";
 
 const trustBadges = [
   "Custom Design",
@@ -31,11 +31,11 @@ export default function Hero() {
         style={{
           background: `linear-gradient(
             to right,
-            oklch(0.12 0.04 155 / 0.95) 0%,
-            oklch(0.12 0.04 155 / 0.88) 30%,
-            oklch(0.12 0.04 155 / 0.55) 60%,
-            oklch(0.12 0.04 155 / 0.25) 80%,
-            oklch(0.12 0.04 155 / 0.15) 100%
+            oklch(0.10 0.04 155 / 0.97) 0%,
+            oklch(0.10 0.04 155 / 0.93) 35%,
+            oklch(0.10 0.04 155 / 0.70) 60%,
+            oklch(0.10 0.04 155 / 0.40) 80%,
+            oklch(0.10 0.04 155 / 0.25) 100%
           )`,
         }}
       />
