@@ -123,7 +123,7 @@
   --card-foreground: oklch(0.94 0.01 80);
   --popover: oklch(0.20 0.04 155);
   --popover-foreground: oklch(0.94 0.01 80);
-  --primary: oklch(0.60 0.16 150);
+  --primary: oklch(0.72 0.18 150);
   --primary-foreground: oklch(0.16 0.04 155);
   --secondary: oklch(0.24 0.035 155);
   --secondary-foreground: oklch(0.88 0.01 80);
@@ -298,4 +298,42 @@
   background: oklch(0.60 0.16 150 / 0.3);
   color: oklch(0.94 0.01 80);
 }
+/* ── Skip-to-content link ── */
+.skip-to-content {
+  position: absolute;
+  top: -100%;
+  left: 1rem;
+  z-index: 9999;
+  padding: 0.75rem 1.5rem;
+  background: var(--primary);
+  color: white;
+  font-weight: 600;
+  font-size: 0.875rem;
+  border-radius: 0 0 0.5rem 0.5rem;
+  text-decoration: none;
+  transition: top 0.2s ease;
+}
+.skip-to-content:focus {
+  top: 0;
+  outline: 3px solid var(--ring);
+  outline-offset: 2px;
+}
+
+/* ── Visible keyboard focus states ── */
+*:focus-visible {
+  outline: 3px solid var(--ring);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+/* ── Reduced-motion support ── */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
 /* Warm redesign — Mar 16 2026 */

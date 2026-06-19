@@ -8,6 +8,7 @@ import { ThemeProvider } from "./contexts/ThemeContext";
 import Home from "./pages/Home";
 import RFP from "./pages/RFP";
 import ContactPage from "./pages/ContactPage";
+import Dashboard from "./pages/Dashboard";
 
 const BBIntake = lazy(() => import("./pages/BBIntake"));
 
@@ -26,6 +27,7 @@ function Router() {
       <Route path={"/contact"} component={ContactPage} />
       <Route path={"/rfp"} component={RFP} />
       <Route path={"/bb/intake"} component={BBIntakeRoute} />
+      <Route path={"/dashboard"} component={Dashboard} />
       <Route path={"/404"} component={NotFound} />
       <Route component={NotFound} />
     </Switch>
