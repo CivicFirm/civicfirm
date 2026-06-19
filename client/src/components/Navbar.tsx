@@ -22,7 +22,7 @@ const navLinks = [
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
-  const { theme, toggleTheme } = useTheme();
+  const { theme } = useTheme();
   const [location, setLocation] = useLocation();
 
   const isRFPPage = location === "/rfp";
@@ -112,25 +112,6 @@ export default function Navbar() {
 
             {/* Desktop CTAs */}
             <div className="hidden md:flex items-center gap-3">
-              {/* Theme toggle */}
-              <button
-                onClick={toggleTheme}
-                aria-label="Toggle theme"
-                className={`w-9 h-9 rounded-full flex items-center justify-center transition-colors ${
-                  "hover:bg-gray-100 dark:hover:bg-[oklch(0.26_0.03_155)] text-[oklch(0.35_0.02_75)] dark:text-[oklch(0.7_0.01_80)]"
-                }`}
-              >
-                {theme === "dark" ? (
-                  <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364-6.364l-.707.707M6.343 17.657l-.707.707M17.657 17.657l-.707-.707M6.343 6.343l-.707-.707M12 8a4 4 0 100 8 4 4 0 000-8z" />
-                  </svg>
-                ) : (
-                  <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
-                  </svg>
-                )}
-              </button>
-
               {/* Primary green CTA */}
               <a
                 href="/contact"
@@ -182,14 +163,6 @@ export default function Navbar() {
             >
               Connect With Us
             </a>
-          </div>
-          <div className="mt-auto pt-6 flex items-center gap-3">
-            <button
-              onClick={toggleTheme}
-              className="flex items-center gap-2 text-sm text-muted-foreground"
-            >
-              {theme === "dark" ? "Switch to Light Mode" : "Switch to Dark Mode"}
-            </button>
           </div>
         </div>
       </div>
