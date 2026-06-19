@@ -76,7 +76,7 @@ export default function PortfolioPage() {
                 </p>
                 <a
                   href="/contact"
-                  className="inline-flex items-center gap-2 text-primary text-sm font-semibold hover:underline underline-offset-4"
+                  className="inline-flex items-center gap-2 text-[#5cb85c] text-sm font-semibold hover:underline underline-offset-4"
                 >
                   Start a project
                   <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>

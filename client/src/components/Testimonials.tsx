@@ -128,7 +128,7 @@ export default function Testimonials() {
           className="font-[var(--font-display)] font-bold text-3xl sm:text-4xl tracking-tight text-white mb-12 md:mb-16"
         >
           Trusted by the{" "}
-          <span className="text-primary">organizations we serve.</span>
+          <span className="text-[#5cb85c]">organizations we serve.</span>
         </motion.h2>
 
         {/* Carousel card */}
@@ -239,7 +239,7 @@ export default function Testimonials() {
                   onClick={() => goTo(i)}
                   className={`h-1.5 rounded-full transition-all duration-300 ${
                     i === current
-                      ? "w-6 bg-primary"
+                      ? "w-6 bg-[#5cb85c]"
                       : "w-1.5 bg-white/20 hover:bg-white/40"
                   }`}
                   aria-label={`Go to testimonial ${i + 1}`}

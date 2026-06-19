@@ -190,8 +190,8 @@ export default function Animations() {
               transition={{ duration: 0.6 }}
               className="flex items-center gap-3 mb-6"
             >
-              <div className="w-12 h-px bg-primary" />
-              <span className="text-primary text-xs uppercase tracking-[0.3em] font-semibold">
+              <div className="w-12 h-px bg-[#5cb85c]" />
+              <span className="text-[#5cb85c] text-xs uppercase tracking-[0.3em] font-semibold">
                 Motion & Animation
               </span>
             </motion.div>
@@ -203,7 +203,7 @@ export default function Animations() {
               className="font-[var(--font-display)] font-extrabold text-4xl sm:text-5xl md:text-6xl tracking-tight text-white leading-[1.05] mb-6"
             >
               We bring ideas<br />
-              <span className="text-primary">to life.</span>
+              <span className="text-[#5cb85c]">to life.</span>
             </motion.h1>
 
             <motion.p
@@ -257,8 +257,8 @@ export default function Animations() {
           <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-8">
             <div>
               <div className="flex items-center gap-3 mb-4">
-                <div className="w-8 h-px bg-primary" />
-                <span className="text-primary text-xs uppercase tracking-[0.3em] font-semibold">Connect With Us</span>
+                <div className="w-8 h-px bg-[#5cb85c]" />
+                <span className="text-[#5cb85c] text-xs uppercase tracking-[0.3em] font-semibold">Connect With Us</span>
               </div>
               <h2 className="font-[var(--font-display)] font-extrabold text-2xl md:text-4xl text-white tracking-tight leading-tight">
                 Ready to animate your story?

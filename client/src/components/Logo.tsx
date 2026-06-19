@@ -12,7 +12,7 @@ export default function Logo({ variant, className = "" }: LogoProps) {
   // "CIVIC" color: white on hero (dark variant), dark charcoal on scrolled (light variant)
   const civicColor = variant === "dark" ? "#ffffff" : "oklch(0.22 0.02 75)";
   // "FIRM" and accent line: always site primary green
-  const firmColor = "oklch(0.30 0.12 150)";
+  const firmColor = "#337444";
 
   return (
     <svg

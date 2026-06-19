@@ -66,6 +66,7 @@ export default function ContactPage() {
   return (
     <div className="min-h-screen bg-[oklch(0.97_0.01_155)]">
       <Navbar />
+      <main id="main-content">
 
       {/* Hero */}
       <section className="relative pt-32 pb-16 md:pt-40 md:pb-20 overflow-hidden">
@@ -93,7 +94,7 @@ export default function ContactPage() {
             className="flex items-center gap-3 mb-6"
           >
             <div className="w-8 h-0.5 bg-[oklch(0.72_0.12_75)]" />
-            <span className="text-primary text-xs font-semibold uppercase tracking-[0.2em]">
+            <span className="text-[#5cb85c] text-xs font-semibold uppercase tracking-[0.2em]">
               Contact
             </span>
           </motion.div>
@@ -105,7 +106,7 @@ export default function ContactPage() {
             style={{ fontSize: "clamp(2rem, 5vw, 4rem)" }}
           >
             Let's build something{" "}
-            <span className="text-primary">that matters.</span>
+            <span className="text-[#5cb85c]">that matters.</span>
           </motion.h1>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
@@ -259,6 +260,7 @@ export default function ContactPage() {
           </div>
         </div>
       </section>
+      </main>
 
       <Footer />
     </div>

@@ -433,11 +433,11 @@ export default function RFP() {
               transition={{ duration: 0.6 }}
               className="flex items-center justify-center gap-3 mb-6"
             >
-              <div className="w-8 h-0.5 bg-primary" />
-              <span className="text-primary text-xs font-semibold uppercase tracking-[0.2em]">
+              <div className="w-8 h-0.5 bg-[#5cb85c]" />
+              <span className="text-[#5cb85c] text-xs font-semibold uppercase tracking-[0.2em]">
                 Get Started
               </span>
-              <div className="w-8 h-0.5 bg-primary" />
+              <div className="w-8 h-0.5 bg-[#5cb85c]" />
             </motion.div>
 
             <motion.h2
@@ -448,7 +448,7 @@ export default function RFP() {
               style={{ fontSize: "clamp(2rem, 4.5vw, 3.75rem)" }}
             >
               Ready to partner with{" "}
-              <span className="text-primary">Civic Firm?</span>
+              <span className="text-[#5cb85c]">Civic Firm?</span>
             </motion.h2>
 
             <motion.p

@@ -45,7 +45,7 @@ export default function MissionCTA() {
             style={{ fontSize: "clamp(2rem, 4.5vw, 3.75rem)" }}
           >
             Your website should work{" "}
-            <span className="text-primary">as hard</span>{" "}
+            <span className="text-[#5cb85c]">as hard</span>{" "}
             as you do.
           </motion.h2>
 

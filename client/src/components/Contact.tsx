@@ -45,7 +45,7 @@ export default function Contact() {
             className="flex items-center gap-3 mb-6"
           >
             <div className="w-8 h-0.5 bg-[oklch(0.72_0.12_75)]" />
-            <span className="text-primary text-xs font-semibold uppercase tracking-[0.2em]">
+            <span className="text-[#5cb85c] text-xs font-semibold uppercase tracking-[0.2em]">
               Contact
             </span>
           </motion.div>
@@ -58,7 +58,7 @@ export default function Contact() {
             style={{ fontSize: "clamp(2rem, 5vw, 4.5rem)" }}
           >
             Let's build something{" "}
-            <span className="text-primary">that matters.</span>
+            <span className="text-[#5cb85c]">that matters.</span>
           </motion.h2>
 
           <motion.p

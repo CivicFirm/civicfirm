@@ -30,7 +30,7 @@ export default function Footer() {
             </p>
             <div className="flex flex-wrap gap-2">
               {["Custom Design", "SEO Optimized", "Mobile-First"].map((badge) => (
-                <span key={badge} className="text-[9px] uppercase tracking-[0.12em] text-primary border border-primary/30 px-2 py-1 rounded">
+                <span key={badge} className="text-[9px] uppercase tracking-[0.12em] text-[#5cb85c] border border-[#5cb85c]/30 px-2 py-1 rounded">
                   {badge}
                 </span>
               ))}
@@ -61,7 +61,7 @@ export default function Footer() {
                 ))}
                 <li>
                   <Link href="/rfp">
-                    <a className="text-primary text-sm hover:text-primary/80 transition-colors font-semibold mt-1">
+                    <a className="text-[#5cb85c] text-sm hover:text-[#5cb85c]/80 transition-colors font-semibold mt-1">
                       Our Approach
                     </a>
                   </Link>
