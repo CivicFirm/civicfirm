@@ -43,9 +43,9 @@ export function TeamCard({ member, index }: { member: (typeof team)[0]; index: n
       initial={{ opacity: 0, y: 30 }}
       animate={isInView ? { opacity: 1, y: 0 } : {}}
       transition={{ duration: 0.6, delay: index * 0.08, ease: [0.16, 1, 0.3, 1] }}
-      className="group flex gap-5 sm:gap-6"
+      className="group flex flex-col sm:flex-row gap-5 sm:gap-6"
     >
-      <div className="relative overflow-hidden w-28 h-28 sm:w-36 sm:h-36 flex-shrink-0 rounded-lg">
+      <div className="relative overflow-hidden aspect-square rounded-lg flex-shrink-0 sm:w-52 md:w-56">
         <img
           src={member.image}
           alt={member.name}
