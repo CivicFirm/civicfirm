@@ -45,7 +45,7 @@ export function TeamCard({ member, index }: { member: (typeof team)[0]; index: n
       transition={{ duration: 0.6, delay: index * 0.08, ease: [0.16, 1, 0.3, 1] }}
       className="group flex flex-col sm:flex-row gap-5 sm:gap-6"
     >
-      <div className="relative overflow-hidden aspect-square rounded-lg flex-shrink-0 sm:w-52 md:w-56">
+      <div className="relative overflow-hidden aspect-square rounded-lg flex-shrink-0 w-full sm:w-52 md:w-56">
         <img
           src={member.image}
           alt={member.name}
@@ -73,7 +73,7 @@ export default function Team() {
   const headInView = useInView(headRef, { once: true, margin: "-100px" });
 
   return (
-    <section id="team" className="py-20 md:py-28 bg-background">
+    <section id="team" className="py-14 md:py-20 bg-background">
       <div className="container">
         {/* Header */}
         <div ref={headRef} className="flex flex-col md:flex-row md:items-end md:justify-between mb-10 md:mb-14">
@@ -85,7 +85,7 @@ export default function Team() {
               className="flex items-center gap-3 mb-4"
             >
               <div className="w-8 h-0.5 bg-[oklch(0.72_0.12_75)]" />
-              <span className="section-label">Leadership</span>
+              <span className="section-label">Our Team</span>
             </motion.div>
 
             <motion.h2
@@ -106,10 +106,10 @@ export default function Team() {
             className="mt-4 md:mt-0 max-w-xs"
           >
             <p className="text-muted-foreground text-sm leading-relaxed">
-              Our leadership team brings together strategy, design, development, and delivery — backed by a broader network of specialists.
+              Strategy, design, development, and delivery — backed by a broader network of specialists.
             </p>
             <p className="text-muted-foreground/60 text-xs mt-2 italic">
-              Introducing our leadership — not the whole team.
+              A few of the people behind the work.
             </p>
           </motion.div>
         </div>

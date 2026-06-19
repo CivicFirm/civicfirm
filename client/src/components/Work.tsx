@@ -54,11 +54,11 @@ export const projects = [
     featured: true,
   },
   {
-    name: "Bravik",
-    sector: "Construction",
-    descriptor: "Full-service construction company",
+    name: "Bravik Contracting",
+    sector: "Renovation & Contracting",
+    descriptor: "Home renovation contractor",
     summary:
-      "A professional, project-focused website for a construction firm — showcasing completed builds, services, and credibility.",
+      "A professional, trust-building website for a residential renovation contractor — showcasing completed projects, services, and client testimonials to generate qualified leads.",
     image: "/portfolio/bravik-hero.png",
     url: "https://bravik.ca",
     accent: "#64a0ff",
@@ -84,17 +84,6 @@ export const projects = [
     image: "/portfolio/lendia-hero.png",
     url: "https://lendia.ca",
     accent: "#10b981",
-    featured: false,
-  },
-  {
-    name: "Becker's Bridal",
-    sector: "Retail & Bridal",
-    descriptor: "Toronto's oldest bridal boutique",
-    summary:
-      "An elegant, appointment-driven website for a heritage bridal boutique — celebrating 80+ years of trust with modern booking and collection showcases.",
-    image: "/portfolio/beckers-hero.png",
-    url: "https://beckersbridals.ca",
-    accent: "#d4a574",
     featured: false,
   },
 ];
