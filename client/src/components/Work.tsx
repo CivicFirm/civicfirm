@@ -86,6 +86,17 @@ export const projects = [
     accent: "#d4a44c",
     featured: false,
   },
+  {
+    name: "Becker's Bridal",
+    sector: "Retail & Bridal",
+    descriptor: "Toronto's oldest bridal boutique",
+    summary:
+      "An elegant, appointment-driven website for a heritage bridal boutique — celebrating 80+ years of trust with modern booking and collection showcases.",
+    image: "/portfolio/beckers-hero.png",
+    url: "https://beckersbridals.ca",
+    accent: "#d4a574",
+    featured: false,
+  },
 ];
 
 export function ProjectCard({
