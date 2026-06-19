@@ -124,7 +124,7 @@ export function ProjectCard({
         delay: index * 0.08,
         ease: [0.16, 1, 0.3, 1],
       }}
-      className="group relative block overflow-hidden rounded-xl bg-[oklch(0.14_0.03_155)]"
+      className="group relative block overflow-hidden rounded-xl bg-[oklch(0.18_0.03_155)] border border-white/10 hover:border-white/25 transition-all duration-500 hover:shadow-[0_8px_32px_rgba(255,255,255,0.06)]"
     >
       {/* Image — uses object-cover with center positioning so nothing important gets cut */}
       <div
@@ -160,7 +160,7 @@ export function ProjectCard({
       </div>
 
       {/* Text panel — BELOW the image, not overlaid. Solid background, always readable. */}
-      <div className="bg-[oklch(0.14_0.03_155)] px-4 py-4 md:px-5 md:py-5 lg:px-6 lg:py-5">
+      <div className="bg-[oklch(0.18_0.03_155)] px-4 py-4 md:px-5 md:py-5 lg:px-6 lg:py-5">
         <p
           className="text-[10px] md:text-[11px] uppercase tracking-[0.14em] font-semibold mb-1"
           style={{ color: project.accent }}
