@@ -136,9 +136,6 @@ export default function Footer() {
             <a href="/terms-and-conditions" className="text-white/50 text-xs hover:text-white/80 transition-colors">
               Terms & Conditions
             </a>
-            <a href="/accessibility" className="text-white/50 text-xs hover:text-white/80 transition-colors">
-              Accessibility Statement
-            </a>
           </div>
         </div>
       </div>

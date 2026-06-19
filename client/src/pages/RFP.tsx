@@ -302,7 +302,7 @@ export default function RFP() {
               transition={{ duration: 0.8, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
               className="font-[var(--font-display)] font-bold text-3xl sm:text-4xl md:text-5xl tracking-tight text-white"
             >
-              Built to <span className="text-[#5cb85c]">perform</span> from day one.
+              Built to <span className="text-[#7bc47f]">perform</span> from day one.
             </motion.h2>
           </motion.div>
 
@@ -433,11 +433,11 @@ export default function RFP() {
               transition={{ duration: 0.6 }}
               className="flex items-center justify-center gap-3 mb-6"
             >
-              <div className="w-8 h-0.5 bg-[#5cb85c]" />
-              <span className="text-[#5cb85c] text-xs font-semibold uppercase tracking-[0.2em]">
+              <div className="w-8 h-0.5 bg-[#7bc47f]" />
+              <span className="text-[#7bc47f] text-xs font-semibold uppercase tracking-[0.2em]">
                 Get Started
               </span>
-              <div className="w-8 h-0.5 bg-[#5cb85c]" />
+              <div className="w-8 h-0.5 bg-[#7bc47f]" />
             </motion.div>
 
             <motion.h2
@@ -448,7 +448,7 @@ export default function RFP() {
               style={{ fontSize: "clamp(2rem, 4.5vw, 3.75rem)" }}
             >
               Ready to partner with{" "}
-              <span className="text-[#5cb85c]">Civic Firm?</span>
+              <span className="text-[#7bc47f]">Civic Firm?</span>
             </motion.h2>
 
             <motion.p
