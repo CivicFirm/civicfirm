@@ -8,7 +8,7 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 
-const projects = [
+export const projects = [
   {
     name: "Toronto Cold Plunge",
     sector: "Wellness & Recovery",
@@ -99,7 +99,7 @@ const projects = [
   },
 ];
 
-function ProjectCard({
+export function ProjectCard({
   project,
   index,
   featured,

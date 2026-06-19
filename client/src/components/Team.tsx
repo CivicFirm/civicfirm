@@ -8,7 +8,7 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 
-const team = [
+export const team = [
   /* ── Row 1 ── */
   {
     name: "Reza Amari, M.Mgt.",
@@ -43,7 +43,7 @@ const team = [
   },
 ];
 
-function TeamCard({ member, index }: { member: (typeof team)[0]; index: number }) {
+export function TeamCard({ member, index }: { member: (typeof team)[0]; index: number }) {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-60px" });
 

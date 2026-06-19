@@ -36,7 +36,7 @@ function LoginGate({ onAuth }: { onAuth: () => void }) {
           placeholder="PIN"
           autoFocus
           className="w-full px-4 py-3 rounded text-sm text-white placeholder:text-white/30 outline-none focus:ring-2 transition-all"
-          style={{ backgroundColor: "rgba(255,255,255,0.08)", border: "1px solid rgba(255,255,255,0.12)", focusRingColor: "#c9a227" }}
+          style={{ backgroundColor: "rgba(255,255,255,0.08)", border: "1px solid rgba(255,255,255,0.12)" }}
         />
         {error && <p className="text-red-400 text-xs mt-2">Incorrect PIN</p>}
         <button
