@@ -104,7 +104,7 @@ export default function Team() {
         </div>
 
         {/* 3-column grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 md:gap-8 max-w-3xl">
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 md:gap-12 max-w-4xl mx-auto">
           {team.map((member, i) => (
             <TeamCard key={member.name} member={member} index={i} />
           ))}
