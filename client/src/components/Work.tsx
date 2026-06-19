@@ -236,7 +236,7 @@ export default function Work() {
               className="font-[var(--font-display)] font-bold text-3xl sm:text-4xl md:text-5xl tracking-tight text-white"
             >
               Work that{" "}
-              <span className="text-[#4ade80]">speaks for itself.</span>
+              <span className="text-[#5cb85c]">speaks for itself.</span>
             </motion.h2>
           </div>
 
@@ -287,7 +287,7 @@ export default function Work() {
           </p>
           <a
             href="/contact"
-            className="inline-flex items-center gap-2 text-primary text-sm font-semibold hover:underline underline-offset-4"
+            className="inline-flex items-center gap-2 text-[#5cb85c] text-sm font-semibold hover:underline underline-offset-4"
           >
             Start a project
             <svg

@@ -302,7 +302,7 @@ export default function RFP() {
               transition={{ duration: 0.8, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
               className="font-[var(--font-display)] font-bold text-3xl sm:text-4xl md:text-5xl tracking-tight text-white"
             >
-              Built to <span className="text-[#4ade80]">perform</span> from day one.
+              Built to <span className="text-[#5cb85c]">perform</span> from day one.
             </motion.h2>
           </motion.div>
 
