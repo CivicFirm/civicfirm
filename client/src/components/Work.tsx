@@ -6,7 +6,7 @@
  * 5 projects: 2 featured + 3 standard. Non-Indigenous projects featured first.
  */
 import { motion, useInView } from "framer-motion";
-import { useRef } from "react";
+import { useRef, useEffect, useState } from "react";
 
 export const projects = [
   {
@@ -108,24 +108,33 @@ export function ProjectCard({
   index: number;
   featured?: boolean;
 }) {
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: "-80px" });
+  const ref = useRef<HTMLAnchorElement>(null);
+  const [visible, setVisible] = useState(false);
+
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+    const obs = new IntersectionObserver(
+      ([e]) => { if (e.isIntersecting) { setVisible(true); obs.disconnect(); } },
+      { rootMargin: "-60px" }
+    );
+    obs.observe(el);
+    return () => obs.disconnect();
+  }, []);
 
   return (
-    <motion.a
+    <a
       ref={ref}
       href={project.url || undefined}
       target={project.url ? "_blank" : undefined}
       rel={project.url ? "noopener noreferrer" : undefined}
-      style={project.url ? undefined : { cursor: "default" }}
-      initial={{ opacity: 0, y: 32 }}
-      animate={isInView ? { opacity: 1, y: 0 } : {}}
-      transition={{
-        duration: 0.65,
-        delay: index * 0.08,
-        ease: [0.16, 1, 0.3, 1],
+      style={{
+        cursor: project.url ? undefined : "default",
+        opacity: visible ? 1 : 0,
+        transform: visible ? "translateY(0)" : "translateY(24px)",
+        transition: `opacity 0.6s cubic-bezier(0.16,1,0.3,1) ${index * 0.08}s, transform 0.6s cubic-bezier(0.16,1,0.3,1) ${index * 0.08}s`,
       }}
-      className="group relative block overflow-hidden rounded-xl bg-[oklch(0.18_0.03_155)] border border-white/[0.12] hover:border-white/30 transition-all duration-500 shadow-[0_2px_12px_rgba(0,0,0,0.3)] hover:shadow-[0_12px_40px_rgba(255,255,255,0.08)]"
+      className="group relative block overflow-hidden rounded-xl bg-[oklch(0.18_0.03_155)] border border-white/[0.12] hover:border-white/30 transition-[border,box-shadow] duration-500 shadow-[0_2px_12px_rgba(0,0,0,0.3)] hover:shadow-[0_12px_40px_rgba(255,255,255,0.08)]"
     >
       {/* Image — uses object-cover with center positioning so nothing important gets cut */}
       <div
@@ -193,7 +202,7 @@ export function ProjectCard({
         className="h-[3px] w-0 group-hover:w-full transition-all duration-500"
         style={{ background: project.accent }}
       />
-    </motion.a>
+    </a>
   );
 }
 

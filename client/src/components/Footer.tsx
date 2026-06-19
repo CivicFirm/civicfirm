@@ -145,11 +145,11 @@ export default function Footer() {
     {/* Developed by Mentee */}
     <div className="bg-[oklch(0.14_0.04_155)] border-t border-[oklch(0.22_0.03_155)]">
       <div className="container py-4 flex items-center justify-center gap-4">
-        <span className="text-xs uppercase font-medium tracking-[0.25em] text-white/40">
+        <span className="text-xs uppercase font-medium tracking-[0.25em] text-white/60">
           Developed by
         </span>
-        <a href="https://mentee.ca" target="_blank" rel="noopener noreferrer" className="hover:opacity-80 transition-opacity">
-          <img src="/images/mentee.png" alt="Mentee" className="h-7 w-auto brightness-0 invert opacity-50" />
+        <a href="https://mentee.ca" target="_blank" rel="noopener noreferrer" className="hover:opacity-90 transition-opacity">
+          <img src="/images/mentee.png" alt="Mentee" className="h-7 w-auto brightness-0 invert opacity-70" />
         </a>
       </div>
     </div>
