@@ -94,12 +94,50 @@ export default function FAQ() {
   const headInView = useInView(headRef, { once: true, margin: "-100px" });
 
   return (
-    <section className="pt-10 pb-20 md:pt-12 md:pb-28">
+    <section className="py-20 md:py-32">
       <div className="container">
-        <div ref={headRef} className="border-t border-border">
-          {faqs.map((faq, i) => (
-            <FAQItem key={i} faq={faq} index={i} />
-          ))}
+        <div className="grid grid-cols-1 lg:grid-cols-[1fr_2fr] gap-10 lg:gap-20 items-start">
+
+          {/* Left: heading */}
+          <div ref={headRef}>
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={headInView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.6 }}
+              className="flex items-center gap-3 mb-4 md:mb-6"
+            >
+              <div className="w-12 h-px bg-[oklch(0.72_0.12_75)]" />
+              <span className="section-label">
+                FAQs
+              </span>
+            </motion.div>
+
+            <motion.h2
+              initial={{ opacity: 0, y: 40 }}
+              animate={headInView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.8, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
+              className="font-[var(--font-display)] font-extrabold text-3xl sm:text-4xl lg:text-5xl tracking-tight text-foreground leading-[1.1] mb-6"
+            >
+              Questions from<br />
+              <span className="text-primary">procurement.</span>
+            </motion.h2>
+
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              animate={headInView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.7, delay: 0.3 }}
+              className="text-muted-foreground text-sm leading-relaxed"
+            >
+              Answers to the questions that matter most to institutional decision-makers and project stakeholders.
+            </motion.p>
+          </div>
+
+          {/* Right: accordion */}
+          <div className="border-t border-border">
+            {faqs.map((faq, i) => (
+              <FAQItem key={i} faq={faq} index={i} />
+            ))}
+          </div>
         </div>
       </div>
     </section>

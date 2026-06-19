@@ -10,7 +10,7 @@ const stats = [
   { value: "50+", label: "Institutional Clients" },
   { value: "100%", label: "On-Time Delivery" },
   { value: "WCAG 2.1 AA", label: "Compliant" },
-  { value: "12", label: "Sectors Served" },
+  { value: "8", label: "Sectors Served" },
 ];
 
 export default function Clients() {

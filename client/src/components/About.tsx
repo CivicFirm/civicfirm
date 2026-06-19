@@ -13,7 +13,7 @@ export default function About() {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section id="about" className="pt-10 pb-20 md:pt-12 md:pb-28 bg-background">
+    <section id="about" className="py-20 md:py-28 bg-background">
       <div className="container">
         <div ref={ref} className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           {/* Image */}

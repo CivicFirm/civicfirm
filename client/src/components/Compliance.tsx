@@ -23,7 +23,7 @@ export default function Compliance() {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section className="pt-10 pb-20 md:pt-12 md:pb-28 bg-[oklch(0.18_0.04_155)]">
+    <section className="py-20 md:py-28 bg-[oklch(0.18_0.04_155)]">
       <div className="container" ref={ref}>
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
           {/* Left — bold statement */}
