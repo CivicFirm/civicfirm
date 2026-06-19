@@ -220,7 +220,7 @@ export default function Work() {
             >
               <div className="w-8 h-0.5 bg-[oklch(0.72_0.12_75)]" />
               <span className="section-label">
-                Portfolio
+                Selected Projects
               </span>
             </motion.div>
 
