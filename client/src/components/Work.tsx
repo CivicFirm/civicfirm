@@ -29,7 +29,7 @@ export const projects = [
     image: "/portfolio/purethai-hero.png",
     url: "https://purethai.ca",
     accent: "#c084fc",
-    featured: true,
+    featured: false,
   },
   {
     name: "GoGo Wellness Clinic",
@@ -51,7 +51,7 @@ export const projects = [
     image: "/portfolio/tucsontots-hero-new.png",
     url: "https://tucsontots.com",
     accent: "#ffc83c",
-    featured: false,
+    featured: true,
   },
   {
     name: "Bravik",
