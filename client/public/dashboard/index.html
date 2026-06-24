@@ -1,0 +1,893 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Dashboard - Civic Firm</title>
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+<link rel="stylesheet" href="/dashboard/pursiva-theme.css" />
+<script src="/dashboard/vault-gate.js"></script>
+<script src="/dashboard/vault-nav.js" defer></script>
+<style>
+  *, *::before, *::after { box-sizing: border-box; }
+  body { margin: 0; min-height: 100vh; }
+
+  .home-shell {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 3rem 2rem 5rem;
+  }
+
+  /* Hero */
+  .home-hero {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 2rem;
+    flex-wrap: wrap;
+    margin-bottom: 2.5rem;
+  }
+  .home-hero-text { flex: 1; min-width: 280px; }
+  .home-eyebrow {
+    font-family: var(--p-font-mono);
+    font-size: 0.7rem;
+    font-weight: 500;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--p-gold-dark);
+    margin: 0 0 0.7rem;
+  }
+  .home-rule {
+    width: 40px; height: 2px;
+    background: var(--p-gold);
+    border-radius: 1px;
+    display: block;
+    margin: 0 0 1.1rem;
+  }
+  .home-hero h1 {
+    font-size: 2.4rem;
+    font-weight: 700;
+    color: var(--p-navy);
+    margin: 0 0 0.6rem;
+    line-height: 1.05;
+    letter-spacing: -0.03em;
+  }
+  .home-hero h1 .serif-italic { font-style: italic; color: var(--p-gold-dark); }
+  .home-hero .lede {
+    color: var(--p-navy-light);
+    font-size: 1.05rem;
+    max-width: 640px;
+    line-height: 1.55;
+    margin: 0;
+  }
+  .home-hero-meta {
+    text-align: right;
+    color: var(--p-muted);
+    font-family: var(--p-font-mono);
+    font-size: 0.78rem;
+    line-height: 1.6;
+    flex-shrink: 0;
+  }
+  .home-hero-meta .date { font-size: 0.9rem; color: var(--p-navy); }
+
+  /* Pipeline Funnel */
+  .funnel-card {
+    background: #fff;
+    border: 1px solid var(--p-ivory-border);
+    border-radius: 14px;
+    padding: 1.5rem 1.6rem 1.4rem;
+    margin: 0 0 2rem;
+  }
+  .funnel-head {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-bottom: 1.3rem;
+  }
+  .funnel-head h2 {
+    font-size: 1.45rem;
+    font-weight: 700;
+    color: var(--p-navy);
+    margin: 0;
+    letter-spacing: -0.01em;
+  }
+  .funnel-head .meta {
+    font-family: var(--p-font-mono);
+    font-size: 0.7rem;
+    color: var(--p-muted);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+  #funnel-svg-wrap {
+    width: 100%;
+    overflow: visible;
+  }
+  #funnel-svg-wrap svg {
+    width: 100%;
+    height: auto;
+    display: block;
+    overflow: visible;
+  }
+  .funnel-footer {
+    margin-top: 1.2rem;
+    padding-top: 0.95rem;
+    border-top: 1px solid var(--p-ivory-border);
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 1rem;
+  }
+  .funnel-footer .label {
+    font-size: 0.82rem;
+    color: var(--p-navy-light);
+  }
+  .funnel-footer .value {
+    font-family: var(--p-font-mono);
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: var(--p-navy);
+  }
+
+  /* Two-column layout */
+  .home-two {
+    display: grid;
+    grid-template-columns: 1.15fr 0.85fr;
+    gap: 1.25rem;
+    margin: 0 0 2rem;
+  }
+  @media (max-width: 920px) { .home-two { grid-template-columns: 1fr; } }
+
+  .card {
+    background: #fff;
+    border: 1px solid var(--p-ivory-border);
+    border-radius: 14px;
+    padding: 1.4rem 1.5rem;
+  }
+  .card-head {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 1rem;
+    margin: 0 0 1.05rem;
+  }
+  .card-head h2 {
+    font-size: 1.35rem;
+    font-weight: 700;
+    color: var(--p-navy);
+    margin: 0;
+    letter-spacing: -0.01em;
+  }
+  .card-head .meta {
+    font-family: var(--p-font-mono);
+    font-size: 0.7rem;
+    color: var(--p-muted);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+
+  /* Focus list */
+  .focus-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.65rem;
+  }
+  .focus-item {
+    display: flex;
+    align-items: center;
+    gap: 0.85rem;
+    padding: 0.7rem 0.85rem;
+    border-radius: 10px;
+    background: var(--p-ivory);
+    border: 1px solid var(--p-ivory-border);
+    color: var(--p-navy);
+  }
+  .focus-icon {
+    flex-shrink: 0;
+    width: 36px; height: 36px;
+    border-radius: 50%;
+    background: oklch(95% 0.05 80);
+    color: var(--p-gold-dark);
+    border: 1px solid var(--p-gold-light);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.95rem;
+  }
+  .focus-item.urgent .focus-icon { background: var(--p-danger-bg); color: var(--p-danger); border-color: oklch(85% 0.05 25); }
+  .focus-item.teal .focus-icon { background: var(--p-teal-bg); color: var(--p-teal); border-color: oklch(85% 0.06 175); }
+  .focus-body { flex: 1; min-width: 0; }
+  .focus-title {
+    font-weight: 600;
+    font-size: 0.92rem;
+    color: var(--p-navy);
+    margin: 0;
+    line-height: 1.25;
+  }
+  .focus-meta {
+    font-family: var(--p-font-mono);
+    font-size: 0.7rem;
+    color: var(--p-muted);
+    margin-top: 0.2rem;
+    letter-spacing: 0.02em;
+  }
+  .focus-count {
+    font-family: var(--p-font-mono);
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: var(--p-navy);
+    flex-shrink: 0;
+  }
+
+  /* AI Stack */
+  .ai-stack-card {
+    background: #fff;
+    border: 1px solid var(--p-ivory-border);
+    border-radius: 14px;
+    padding: 1.5rem 1.6rem 1.4rem;
+    margin: 0 0 2rem;
+  }
+  .ai-stack-head {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-bottom: 1.2rem;
+  }
+  .ai-stack-head h2 {
+    font-size: 1.4rem;
+    font-weight: 700;
+    letter-spacing: -0.025em;
+    color: var(--p-navy);
+    margin: 0;
+  }
+  .ai-stack-head .meta {
+    font-size: 0.7rem;
+    color: var(--p-gold-dark);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    font-weight: 600;
+  }
+  .ai-stack-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.85rem;
+  }
+  @media (max-width: 720px) { .ai-stack-grid { grid-template-columns: 1fr; } }
+  .ai-stack-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.85rem;
+    padding: 0.9rem 1.05rem;
+    background: var(--p-ivory);
+    border: 1px solid var(--p-ivory-border);
+    border-radius: 10px;
+    transition: border-color 200ms var(--p-ease-out), transform 200ms var(--p-ease-out);
+  }
+  .ai-stack-item:hover { border-color: var(--p-gold-light); transform: translateY(-1px); }
+  .ai-stack-icon {
+    width: 36px; height: 36px;
+    border-radius: 9px;
+    background: oklch(95% 0.05 80);
+    color: var(--p-gold-dark);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    flex-shrink: 0;
+    border: 1px solid var(--p-gold-light);
+  }
+  .ai-stack-body { flex: 1; min-width: 0; }
+  .ai-stack-name {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--p-navy);
+    letter-spacing: -0.015em;
+    line-height: 1.2;
+  }
+  .ai-stack-role {
+    font-size: 0.82rem;
+    color: var(--p-navy-light);
+    line-height: 1.45;
+    margin-top: 0.25rem;
+  }
+
+  /* Recent activity */
+  .activity {
+    list-style: none;
+    margin: 0; padding: 0;
+    display: flex;
+    flex-direction: column;
+  }
+  .activity li {
+    padding: 0.7rem 0;
+    border-bottom: 1px solid var(--p-ivory-border);
+    display: flex;
+    gap: 0.7rem;
+    align-items: flex-start;
+  }
+  .activity li:last-child { border-bottom: none; }
+  .activity .dot {
+    flex-shrink: 0;
+    width: 6px; height: 6px;
+    border-radius: 50%;
+    background: var(--p-gold);
+    margin-top: 0.65rem;
+  }
+  .activity .body { flex: 1; min-width: 0; }
+  .activity .body strong { color: var(--p-navy); font-weight: 600; font-size: 0.9rem; }
+  .activity .body .desc { color: var(--p-navy-light); font-size: 0.86rem; margin-top: 0.1rem; }
+  .activity .when { font-family: var(--p-font-mono); font-size: 0.7rem; color: var(--p-muted); flex-shrink: 0; }
+
+  .empty-line { color: var(--p-muted); font-size: 0.85rem; font-style: italic; padding: 0.6rem 0; }
+</style>
+</head>
+<body>
+
+<div class="home-shell">
+
+  <!-- Hero -->
+  <div class="home-hero">
+    <div class="home-hero-text">
+      <p class="home-eyebrow">Dashboard</p>
+      <span class="home-rule"></span>
+      <h1 id="hero-greeting">Welcome back, <span class="serif-italic">Jason</span></h1>
+      <p class="lede">A quick look at what's moving across Civic Firm. The highest-match opportunities and your in-flight proposals — all in one place.</p>
+    </div>
+    <div class="home-hero-meta">
+      <div class="date" id="today-date">—</div>
+      <div id="today-day">—</div>
+    </div>
+  </div>
+
+  <!-- Pipeline funnel -->
+  <div class="funnel-card">
+    <div class="funnel-head">
+      <h2>Pipeline funnel</h2>
+      <span class="meta" id="funnel-total">—</span>
+    </div>
+    <div id="funnel-svg-wrap"></div>
+    <div class="funnel-footer">
+      <span class="label">Overall conversion (Discovered → Awarded)</span>
+      <span class="value" id="funnel-conversion">—</span>
+    </div>
+  </div>
+
+  <!-- KPI strip -->
+  <div class="p-kpi-row" id="kpis"></div>
+
+  <!-- AI Stack -->
+  <div class="ai-stack-card">
+    <div class="ai-stack-head">
+      <h2>AI Stack</h2>
+      <span class="meta">Tools</span>
+    </div>
+    <div class="ai-stack-grid" id="ai-stack"></div>
+  </div>
+
+  <!-- Two-column: Focus + Activity -->
+  <div class="home-two">
+
+    <!-- Focus Today -->
+    <div class="card">
+      <div class="card-head">
+        <h2>Focus this week</h2>
+        <span class="meta" id="focus-week-range">—</span>
+      </div>
+      <ul class="focus-list" id="focus-list"></ul>
+    </div>
+
+    <!-- Recent activity -->
+    <div class="card">
+      <div class="card-head">
+        <h2>Recent activity</h2>
+        <span class="meta">Last 7 days</span>
+      </div>
+      <ul class="activity" id="activity-list"></ul>
+    </div>
+
+  </div>
+
+</div>
+
+<script>
+/* ─────────────────────────────────────────────────────────────────────
+   Dashboard data — reads localStorage['rfp'] (same data the tracker
+   uses) and computes lightweight KPIs + focus items. No external calls.
+   ────────────────────────────────────────────────────────────────── */
+
+const RFP_KEY = 'rfp';
+function safeParse(s, f) { try { return JSON.parse(s); } catch { return f; } }
+function loadEntries() { return safeParse(localStorage.getItem(RFP_KEY) || '[]', []); }
+function escapeHtml(s) {
+  return String(s == null ? '' : s).replace(/[&<>"']/g, m => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]));
+}
+
+/* Match-score algorithm — synced with tracker. */
+const MENTEE_PROFILE = {
+  primary: [
+    'indigenous','indigenous-led','first nations','first nation','m\u00e9tis','metis','inuit','aboriginal',
+    'reconciliation','truth and reconciliation','trc','calls to action',
+    'treaty','self-determination','self determination','sovereignty','land back','nation building',
+    'tribal','band','tribal council','band council','decolonize','decolonization','decolonizing',
+    'mi\'kmaq','mikmaq','cree','anishinaabe','haudenosaunee','mohawk','dene','salish','tlingit','innu','oji-cree','algonquin','blackfoot',
+    'oral history','traditional knowledge','traditional teachings','indigenous knowledge',
+    'two-eyed seeing','language revitalization','cultural revitalization',
+    'residential schools','day schools','mmiwg','land-based','on the land',
+    'elder','elders','knowledge keepers','youth','intergenerational',
+    'mentorship','mentor','mentoring','mentee','community-led','community led','community-based',
+  ],
+  service: [
+    'curriculum','pedagogy','instructional design','lesson plan',
+    'training','professional development','workshop','workshops','capacity building',
+    'education','educational program','k-12','post-secondary','higher education',
+    'research','community-based research','participatory research','evaluation','assessment','review',
+    'knowledge translation','knowledge mobilization',
+    'language','cultural','culture',
+    'facilitation','focus group','engagement','consultation','community engagement','public engagement',
+    'policy','advocacy','communications','storytelling','narrative',
+    'program design','program evaluation','logic model','report writing','reports','documentation',
+  ],
+  budget: { min: 10000, sweet_min: 25000, sweet_max: 250000, max: 1500000 },
+  org_hints: ['nation','band','tribal','indigenous','m\u00e9tis','metis','inuit','first nation','first nations','aboriginal','friendship centre','friendship center','cree','dene','mi\'kmaq','mohawk','haudenosaunee','reconciliation','native','iskwew']
+};
+
+const CIVIC_PROFILE = {
+  primary: [
+    'communications','communication','communications strategy','communications plan',
+    'branding','rebrand','brand identity','visual identity','brand strategy','brand refresh','identity system','style guide','brand guidelines',
+    'website','web design','web development','web','digital','digital transformation','digital strategy','digital services','user experience','ux','ui','mobile app',
+    'strategic plan','strategic planning','strategy','planning','business plan','business planning','master plan','roadmap',
+    'marketing','marketing strategy','campaign','advertising','public relations','media strategy','outreach',
+    'stakeholder engagement','public engagement','community engagement','consultation','engagement',
+    'policy','policy development','policy analysis','governance','public policy',
+    'design system','graphic design','design','content strategy','content','creative direction','art direction',
+    'editorial','writing','copywriting','editing','storytelling','narrative',
+    'annual report','report','reports','documentation','whitepaper','briefing',
+    'feasibility study','feasibility','environmental scan','research','market research','qualitative research',
+    'evaluation','assessment','review','audit','gap analysis',
+    'training','workshop','facilitation','professional development','capacity building',
+    'event','events','conference','conferences',
+    'social media','video','photography','illustration','animation',
+    'wayfinding','signage','environmental graphics','exhibit design',
+    'data visualization','infographic','dashboard',
+    'proposal writing','grant writing',
+  ],
+  service: [
+    'logo','identity','design','visual','creative','web','website','app','digital','ux','ui',
+    'content','copy','writing','edit','editorial','storytelling',
+    'campaign','social media','newsletter','video','photography',
+    'plan','strategy','research','evaluation','report',
+    'engagement','outreach','consultation','facilitation','workshop','training','professional development',
+  ],
+  budget: { min: 25000, sweet_min: 50000, sweet_max: 500000, max: 3000000 },
+  org_hints: [
+    'city of','town of','township','municipality','municipal','county','regional district','rural municipality',
+    'province','provincial','ministry','department','agency','authority','board','commission','council',
+    'federal','government','crown corporation','public','school district','school board','university','college','institute',
+    'health authority','health region','library','museum','archives',
+    'foundation','non-profit','nonprofit','charity','society','association','chamber of commerce','economic development'
+  ]
+};
+const EXCLUSION_KEYWORDS = [
+  'construction services','general contracting','paving','asphalt','concrete supply',
+  'highway','roadway construction','bridge construction','bridge maintenance',
+  'sewage','sewer','water treatment plant','oil pipeline','gas pipeline','pipeline construction',
+  'hvac','mechanical contractor','electrical contractor','plumbing contractor','roofing contractor',
+  'janitorial services','snow removal','fleet maintenance','vehicle maintenance',
+  'catering services','food services contract','security guard services',
+  'landscaping services','demolition','excavation','medical equipment supply','pharmaceutical supply'
+];
+
+function entrySearchText(e) {
+  return [e.organization, e.title, e.category, e.description, e.summary, e.scope, e.notes].filter(Boolean).join(' \n ').toLowerCase();
+}
+function countMatches(text, keywords) {
+  let hits = 0;
+  for (const kw of keywords) if (text.indexOf(kw) !== -1) hits++;
+  return hits;
+}
+function parseBudgetAmount(raw) {
+  if (!raw && raw !== 0) return null;
+  if (typeof raw === 'number') return raw;
+  const s = String(raw).toLowerCase().replace(/[,$\s]/g, '');
+  const m = s.match(/(\d+(?:\.\d+)?)\s*([km])?/);
+  if (!m) return null;
+  let n = parseFloat(m[1]);
+  if (m[2] === 'k') n *= 1000;
+  if (m[2] === 'm') n *= 1000000;
+  return n;
+}
+function computeMatchScore(entry, brandKey) {
+  const profile = brandKey === 'mentee' ? MENTEE_PROFILE : CIVIC_PROFILE;
+  const text = entrySearchText(entry);
+  const orgText = (entry.organization || '').toLowerCase();
+  const base = 35;
+  const primary = Math.min(30, countMatches(text, profile.primary) * 5);
+  const services = Math.min(20, countMatches(text, profile.service) * 3);
+  let deadline = 0;
+  if (entry.deadline) {
+    const t = new Date(entry.deadline).getTime();
+    if (isFinite(t)) {
+      const days = (t - Date.now()) / 86400000;
+      deadline = days < 0 ? -8 : days < 14 ? 5 : days < 30 ? 4 : days < 60 ? 2 : 0;
+    }
+  }
+  let budget = 0;
+  const b = parseBudgetAmount(entry.budget);
+  if (b !== null) {
+    const { min, sweet_min, sweet_max, max } = profile.budget;
+    if (b >= sweet_min && b <= sweet_max) budget = 10;
+    else if (b >= min && b <= max) budget = 5;
+  }
+  let org = 0;
+  for (const h of profile.org_hints) if (orgText.indexOf(h) !== -1) { org = 10; break; }
+  let exclusion = 0;
+  for (const k of EXCLUSION_KEYWORDS) if (text.indexOf(k) !== -1) { exclusion = -25; break; }
+  return Math.max(0, Math.min(100, base + primary + services + deadline + budget + org + exclusion));
+}
+
+/* Date helpers */
+function fmtDate(d) {
+  const dt = new Date(d);
+  return dt.toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
+}
+function startOfWeek(d) {
+  const dt = new Date(d);
+  dt.setHours(0, 0, 0, 0);
+  dt.setDate(dt.getDate() - dt.getDay());
+  return dt;
+}
+function relativeDays(iso) {
+  if (!iso) return '';
+  const t = new Date(iso).getTime();
+  if (!isFinite(t)) return '';
+  const days = Math.floor((t - Date.now()) / 86400000);
+  if (days < 0) return `${-days}d overdue`;
+  if (days === 0) return 'Today';
+  if (days === 1) return 'Tomorrow';
+  if (days < 7) return `In ${days} days`;
+  if (days < 14) return `In ${Math.floor(days / 7)} week`;
+  return `In ${Math.floor(days / 7)} weeks`;
+}
+
+/* ─────────────────────────────────────────────────────────────────────
+   Render
+   ────────────────────────────────────────────────────────────────── */
+
+function renderDate() {
+  const now = new Date();
+  document.getElementById('today-date').textContent =
+    now.toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' });
+  document.getElementById('today-day').textContent =
+    now.toLocaleDateString('en-US', { weekday: 'long' });
+  const start = startOfWeek(now);
+  const end = new Date(start); end.setDate(start.getDate() + 6);
+  document.getElementById('focus-week-range').textContent =
+    `${fmtDate(start)} – ${fmtDate(end)}`;
+}
+
+function renderFunnel(entries) {
+  const STAGES = [
+    { key: 'discovered', label: 'Discovered', statuses: ['pending'] },
+    { key: 'targeted',   label: 'Targeted',   statuses: ['targeted', 'drafting'] },
+    { key: 'submitted',  label: 'Submitted',  statuses: ['submitted', 'follow_up', 'past_deadline'] },
+    { key: 'awarded',    label: 'Awarded',    statuses: ['awarded', 'completed'] },
+  ];
+  const STAGE_COLORS = [
+    '#3ABFB8',
+    '#2A8FA8',
+    '#1E6A8A',
+    '#3B4F7A',
+  ];
+  const counts = STAGES.map(stage =>
+    entries.filter(e => stage.statuses.includes(e.status || 'pending')).length
+  );
+  const max = counts[0] || 1;
+  const N = STAGES.length;
+  const SVG_W = 960;
+  const RESULT_W = 80;
+  const ARROW_W = 40;
+  const LABEL_AREA_H = 72;
+  const FUNNEL_H = 160;
+  const SVG_H = FUNNEL_H + LABEL_AREA_H + 8;
+  const FUNNEL_W = SVG_W - RESULT_W - ARROW_W - 12;
+  const SEG_W = FUNNEL_W / N;
+  const MID_Y = FUNNEL_H / 2;
+  const TIP_HALF = 8;
+  function funnelY(x) {
+    const t = x / FUNNEL_W;
+    const topY = t * (MID_Y - TIP_HALF);
+    const botY = FUNNEL_H - t * (MID_Y - TIP_HALF);
+    return { topY, botY };
+  }
+  const ns = 'http://www.w3.org/2000/svg';
+  let parts = [
+    `<svg viewBox="0 0 ${SVG_W} ${SVG_H}" xmlns="${ns}" style="font-family:var(--p-font-sans);overflow:visible">`
+  ];
+  for (let i = 0; i < N; i++) {
+    const x1 = i * SEG_W;
+    const x2 = (i + 1) * SEG_W;
+    const { topY: tL, botY: bL } = funnelY(x1);
+    const { topY: tR, botY: bR } = funnelY(x2);
+    const poly = `${x1},${tL} ${x2},${tR} ${x2},${bR} ${x1},${bL}`;
+    parts.push(`<polygon points="${poly}" fill="${STAGE_COLORS[i]}"/>`);
+    if (i < N - 1) {
+      parts.push(`<line x1="${x2}" y1="${tR}" x2="${x2}" y2="${bR}" stroke="rgba(255,255,255,0.45)" stroke-width="2"/>`);
+    }
+  }
+  const arrowX = FUNNEL_W + 6;
+  const arrowTipX = arrowX + ARROW_W - 4;
+  parts.push(
+    `<polygon points="${arrowX},${MID_Y - 16} ${arrowTipX},${MID_Y} ${arrowX},${MID_Y + 16}" fill="#b0b8cc" opacity="0.8"/>`
+  );
+  const resultX = FUNNEL_W + ARROW_W + 14;
+  const won = counts[counts.length - 1];
+  const total = counts.reduce((a, b) => a + b, 0);
+  const rate = total ? Math.round((won / total) * 100) : 0;
+  parts.push(
+    `<rect x="${resultX}" y="${MID_Y - 28}" width="${RESULT_W - 4}" height="56" rx="6" fill="#f0f4f8" stroke="#d0d8e8" stroke-width="1.5"/>`,
+    `<text x="${resultX + (RESULT_W - 4) / 2}" y="${MID_Y - 8}" text-anchor="middle" font-size="18" font-weight="800" fill="#1a2a4a">${won}</text>`,
+    `<text x="${resultX + (RESULT_W - 4) / 2}" y="${MID_Y + 10}" text-anchor="middle" font-size="10" font-weight="700" fill="#666" letter-spacing="0.5">RESULT</text>`,
+    `<text x="${resultX + (RESULT_W - 4) / 2}" y="${MID_Y + 24}" text-anchor="middle" font-size="9" fill="#999">${rate}% win rate</text>`
+  );
+  for (let i = 0; i < N; i++) {
+    const cx = i * SEG_W + SEG_W / 2;
+    const { topY, botY } = funnelY(cx);
+    const cy = (topY + botY) / 2;
+    const r = 17;
+    const n = counts[i];
+    const pct = total ? Math.round((n / total) * 100) : 0;
+    parts.push(
+      `<line x1="${cx}" y1="${botY}" x2="${cx}" y2="${FUNNEL_H + 8}" stroke="#c0c8d8" stroke-width="1" stroke-dasharray="4,3"/>`
+    );
+    parts.push(
+      `<circle cx="${cx}" cy="${cy}" r="${r}" fill="white" opacity="0.95" filter="drop-shadow(0 1px 2px rgba(0,0,0,0.15))"/>`,
+      `<text x="${cx}" y="${cy + 5}" text-anchor="middle" font-size="14" font-weight="800" fill="#1a2a4a">${i + 1}</text>`
+    );
+    const labelY = FUNNEL_H + 24;
+    parts.push(
+      `<text x="${cx}" y="${labelY}" text-anchor="middle" font-size="12" font-weight="700" fill="#1a2a4a">${STAGES[i].label}</text>`,
+      `<text x="${cx}" y="${labelY + 17}" text-anchor="middle" font-size="11" fill="#666">${n} RFP${n !== 1 ? 's' : ''}</text>`,
+      `<text x="${cx}" y="${labelY + 32}" text-anchor="middle" font-size="10" fill="#999">${pct}% of pipeline</text>`
+    );
+  }
+  const resultLabelX = resultX + (RESULT_W - 4) / 2;
+  parts.push(
+    `<text x="${resultLabelX}" y="${FUNNEL_H + 24}" text-anchor="middle" font-size="12" font-weight="700" fill="#1a2a4a">Won</text>`,
+    `<text x="${resultLabelX}" y="${FUNNEL_H + 41}" text-anchor="middle" font-size="11" fill="#666">${won} RFP${won !== 1 ? 's' : ''}</text>`
+  );
+  parts.push('</svg>');
+  const wrap = document.getElementById('funnel-svg-wrap');
+  wrap.innerHTML = parts.join('');
+  document.getElementById('funnel-total').textContent = `${total} in pipeline`;
+  document.getElementById('funnel-conversion').textContent = `${rate}%  (${won} of ${total})`;
+}
+
+function renderKpis(entries) {
+  const now = Date.now();
+  const ninetyDays = now - 90 * 86400000;
+  let active = 0, highMatch = 0, awarded90 = 0, scoreSum = 0, scoreCount = 0;
+  for (const e of entries) {
+    const st = e.status || 'pending';
+    if (st === 'pending' || st === 'drafting' || st === 'targeted') active++;
+    const score = computeMatchScore(e, e.brand === 'mentee' ? 'mentee' : 'civic');
+    if (score >= 75) highMatch++;
+    if (['pending','drafting','targeted','submitted'].includes(st)) {
+      scoreSum += score; scoreCount++;
+    }
+    if (st === 'awarded') {
+      const raw = e.awardedAt || e.submittedAt || e.createdAt || e.discoveredAt || '';
+      const d = raw ? new Date(raw).getTime() : NaN;
+      if (!raw || !isFinite(d) || d >= ninetyDays) awarded90++;
+    }
+  }
+  const avg = scoreCount ? Math.round(scoreSum / scoreCount) : 0;
+  const svgActive = `<svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" width="22" height="22"><circle cx="10" cy="10" r="7"/><path d="M10 7v3l2 2"/></svg>`;
+  const svgStar   = `<svg viewBox="0 0 20 20" fill="currentColor" width="20" height="20"><path d="M10 2l2.4 5h5.3l-4.3 3.1 1.6 5.2L10 12.3l-5 3 1.6-5.2L2.3 7h5.3z"/></svg>`;
+  const svgAward  = `<svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" width="22" height="22"><circle cx="10" cy="8" r="5"/><path d="M6.5 13.5L5 18l5-2 5 2-1.5-4.5"/></svg>`;
+  const svgScore  = `<svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" width="22" height="22"><path d="M3 14l4-4 3 3 4-5 3 3"/><rect x="2" y="3" width="16" height="14" rx="2"/></svg>`;
+  const cards = [
+    { icon: svgActive, label: 'Active Opportunities', n: active,    helper: 'In your pipeline now' },
+    { icon: svgStar,   label: 'High-Match Available',  n: highMatch, helper: 'Score \u2265 75 against brand' },
+    { icon: svgAward,  label: 'Awarded \u00b7 90d',   n: awarded90, helper: 'Wins this quarter',           accent: 'accent-teal' },
+    { icon: svgScore,  label: 'Avg Match Score',       n: avg, suffix: ' / 100', helper: 'Across in-flight entries', accent: 'accent-navy' },
+  ];
+  document.getElementById('kpis').innerHTML = cards.map(c => `
+    <div class="p-kpi-card ${c.accent || ''}">
+      <div class="p-kpi-icon">${c.icon}</div>
+      <div class="p-kpi-body">
+        <div class="p-kpi-number">${c.n}${c.suffix ? `<span class="suffix">${c.suffix}</span>` : ''}</div>
+        <div class="p-kpi-label">${c.label}</div>
+        <div class="p-kpi-trend">${c.helper}</div>
+      </div>
+    </div>
+  `).join('');
+}
+
+function renderFocus(entries) {
+  const now = Date.now();
+  const weekEnd = now + 7 * 86400000;
+
+  const dueThisWeek = entries.filter(e => {
+    if (!e.deadline) return false;
+    const t = new Date(e.deadline).getTime();
+    return isFinite(t) && t >= now && t <= weekEnd && !['awarded','declined','rejected','completed'].includes(e.status);
+  });
+  dueThisWeek.sort((a, b) => new Date(a.deadline) - new Date(b.deadline));
+
+  const highMatch = entries
+    .filter(e => (e.status || 'pending') === 'pending')
+    .map(e => ({ e, score: computeMatchScore(e, e.brand === 'mentee' ? 'mentee' : 'civic') }))
+    .filter(x => x.score >= 80)
+    .sort((a, b) => b.score - a.score)
+    .slice(0, 5)
+    .map(x => x.e);
+
+  const drafting = entries.filter(e => e.status === 'drafting');
+
+  const items = [];
+  if (dueThisWeek.length) {
+    items.push({
+      cls: 'urgent', icon: '\u23f0',
+      title: `${dueThisWeek.length} RFP${dueThisWeek.length === 1 ? '' : 's'} due this week`,
+      meta: dueThisWeek.slice(0, 3).map(e => `${e.organization || e.title || '?'} \u00b7 ${relativeDays(e.deadline)}`).join(' \u00b7 '),
+      count: dueThisWeek.length
+    });
+  }
+  if (highMatch.length) {
+    items.push({
+      cls: '', icon: '\u2726',
+      title: `${highMatch.length} high-match opportunit${highMatch.length === 1 ? 'y' : 'ies'} to review`,
+      meta: highMatch.slice(0, 3).map(e => e.organization || e.title || '?').join(' \u00b7 '),
+      count: highMatch.length
+    });
+  }
+  if (drafting.length) {
+    items.push({
+      cls: 'teal', icon: '\u270e',
+      title: `${drafting.length} proposal${drafting.length === 1 ? '' : 's'} drafting`,
+      meta: drafting.slice(0, 3).map(e => e.organization || e.title || '?').join(' \u00b7 '),
+      count: drafting.length
+    });
+  }
+
+  const el = document.getElementById('focus-list');
+  if (!items.length) {
+    el.innerHTML = '<li class="empty-line">Nothing urgent this week. Pipeline data will appear here once opportunities are added.</li>';
+    return;
+  }
+  el.innerHTML = items.map(it => `
+    <div class="focus-item ${it.cls}">
+      <span class="focus-icon">${it.icon}</span>
+      <div class="focus-body">
+        <p class="focus-title">${escapeHtml(it.title)}</p>
+        <div class="focus-meta">${escapeHtml(it.meta || '')}</div>
+      </div>
+      <span class="focus-count">${it.count}</span>
+    </div>
+  `).join('');
+}
+
+function renderActivity(entries) {
+  const dated = entries
+    .map(e => ({
+      e,
+      when: e.discoveredAt || e.createdAt || e.submittedAt || e.awardedAt || '',
+    }))
+    .filter(x => x.when)
+    .sort((a, b) => new Date(b.when) - new Date(a.when))
+    .slice(0, 6);
+
+  const el = document.getElementById('activity-list');
+  if (!dated.length) {
+    el.innerHTML = '<li><div class="body"><div class="desc empty-line">No recent activity yet. Opportunities will appear here as they are tracked.</div></div></li>';
+    return;
+  }
+  el.innerHTML = dated.map(({ e, when }) => {
+    const brand = e.brand === 'mentee' ? 'Mentee' : 'Civic Firm';
+    const status = e.status || 'pending';
+    const verb = status === 'awarded' ? 'Awarded'
+              : status === 'submitted' ? 'Submitted'
+              : status === 'drafting' ? 'Drafting'
+              : 'Discovered';
+    const ago = relativeAgo(when);
+    return `
+      <li>
+        <span class="dot"></span>
+        <div class="body">
+          <strong>${escapeHtml(verb)}: ${escapeHtml(e.organization || e.title || '(no title)')}</strong>
+          <div class="desc">${escapeHtml(brand)} \u00b7 ${escapeHtml(e.category || e.title || '\u2014')}</div>
+        </div>
+        <span class="when">${escapeHtml(ago)}</span>
+      </li>
+    `;
+  }).join('');
+}
+
+function relativeAgo(iso) {
+  const t = new Date(iso).getTime();
+  if (!isFinite(t)) return '';
+  const diff = Date.now() - t;
+  const days = Math.floor(diff / 86400000);
+  if (days < 1) {
+    const hrs = Math.floor(diff / 3600000);
+    if (hrs < 1) return 'just now';
+    return `${hrs}h ago`;
+  }
+  if (days < 7) return `${days}d ago`;
+  const weeks = Math.floor(days / 7);
+  if (weeks < 5) return `${weeks}w ago`;
+  return new Date(iso).toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
+}
+
+/* AI Stack */
+const AI_STACK_DEFAULT = [
+  { name: 'Claude',       role: "Anything written that doesn't need deep research. Proposals, reports, RFP adaptations." },
+  { name: 'Claude Code',  role: "Backend development \u2014 admin portals, login systems, databases, APIs." },
+  { name: 'Manus',        role: "Frontend development \u2014 layouts, navigation, animations, responsive design." },
+  { name: 'NotebookLM',   role: "Research tool \u2014 drop in academic journals, government reports, and RFP docs." },
+  { name: 'WhisperFlow',  role: "Voice dictation for rapid content capture \u2014 draft proposals and meeting notes hands-free." },
+  { name: 'Granola',      role: "Seamless meeting notes \u2014 no bot joining the call, just works in the background." },
+  { name: 'Nano Banana',  role: "Precise single-image edits \u2014 one image at a time with careful attention to detail." },
+  { name: 'MidJourney',   role: "Bulk image generation \u2014 put in many prompts at once and get them all simultaneously." },
+];
+function loadAiStack() {
+  const raw = localStorage.getItem('ai_stack');
+  if (!raw) return AI_STACK_DEFAULT;
+  try {
+    let v = JSON.parse(raw);
+    if (typeof v === 'string') v = JSON.parse(v);
+    if (Array.isArray(v) && v.length) return v;
+  } catch (e) {}
+  return AI_STACK_DEFAULT;
+}
+function renderAiStack() {
+  const stack = loadAiStack();
+  const el = document.getElementById('ai-stack');
+  if (!el) return;
+  el.innerHTML = stack.map(t => {
+    const initials = (t.name || '?').replace(/[^A-Za-z]/g, '').slice(0, 2).toUpperCase() || '?';
+    return `
+      <div class="ai-stack-item">
+        <div class="ai-stack-icon">${escapeHtml(initials)}</div>
+        <div class="ai-stack-body">
+          <div class="ai-stack-name">${escapeHtml(t.name || '')}</div>
+          <div class="ai-stack-role">${escapeHtml(t.role || '')}</div>
+        </div>
+      </div>
+    `;
+  }).join('');
+}
+
+/* Boot */
+let entries = loadEntries();
+renderDate();
+renderFunnel(entries);
+renderKpis(entries);
+renderAiStack();
+renderFocus(entries);
+renderActivity(entries);
+
+/* Cross-tab live sync */
+window.addEventListener('storage', (e) => {
+  if (e.key === RFP_KEY) {
+    const fresh = loadEntries();
+    renderFunnel(fresh);
+    renderKpis(fresh);
+    renderFocus(fresh);
+    renderActivity(fresh);
+  }
+});
+</script>
+</body>
+</html>
