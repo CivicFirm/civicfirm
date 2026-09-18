@@ -39,10 +39,10 @@ const stagger = {
   visible: { transition: { staggerChildren: 0.12 } },
 };
 
-const HERO_IMG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663407421710/Dh4Sf2Q7EBA8Vubfgk38fD/hero-boutique-nmLSLy6RKXY44yUEMrf4xa.webp";
-const HERITAGE_IMG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663407421710/Dh4Sf2Q7EBA8Vubfgk38fD/heritage-storefront-VcZy7sBCoDfYHaxRsuqqBg.webp";
-const MOCKUP_IMG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663407421710/Dh4Sf2Q7EBA8Vubfgk38fD/beckers-mockup-clean-jdC2QRXDZ2EGggtZFqq2z7.webp";
-const BRIDE_IMG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663407421710/Dh4Sf2Q7EBA8Vubfgk38fD/bride-moment-7FjzG7bGqkoBJeNoWMfLmg.webp";
+const HERO_IMG = "https://pub-6281454612a3489c9552ff2083e4b511.r2.dev/bb/hero-boutique-nmLSLy6RKXY44yUEMrf4xa.webp";
+const HERITAGE_IMG = "https://pub-6281454612a3489c9552ff2083e4b511.r2.dev/bb/heritage-storefront-VcZy7sBCoDfYHaxRsuqqBg.webp";
+const MOCKUP_IMG = "https://pub-6281454612a3489c9552ff2083e4b511.r2.dev/bb/beckers-mockup-clean-jdC2QRXDZ2EGggtZFqq2z7.webp";
+const BRIDE_IMG = "https://pub-6281454612a3489c9552ff2083e4b511.r2.dev/bb/bride-moment-7FjzG7bGqkoBJeNoWMfLmg.webp";
 
 export default function Home() {
   const [activeTier, setActiveTier] = useState<number>(1);

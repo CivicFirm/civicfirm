@@ -6,7 +6,7 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 
-const ABOUT_IMG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663407421710/CU5JQUQHP3FutNoS5xA4np/hero-community-2_ceaeeeb0.jpg";
+const ABOUT_IMG = "/images/mission-community.jpg";
 
 export default function About() {
   const ref = useRef(null);

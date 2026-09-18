@@ -32,11 +32,11 @@ const stagger = {
 };
 
 /* CDN images */
-const HERO_BRIDE = "https://d2xsxph8kpxj0f.cloudfront.net/310519663407421710/Dh4Sf2Q7EBA8Vubfgk38fD/beckers-hero-bride-VGi3hP37XyjN3sxmo3JxZL.webp";
-const BOUTIQUE_INTERIOR = "https://d2xsxph8kpxj0f.cloudfront.net/310519663407421710/Dh4Sf2Q7EBA8Vubfgk38fD/beckers-boutique-interior-c9xTZPkaBq3EUrSKBwhbf3.webp";
-const GOWN_DETAIL = "https://d2xsxph8kpxj0f.cloudfront.net/310519663407421710/Dh4Sf2Q7EBA8Vubfgk38fD/beckers-gown-detail-U22m4NHAJdJHUS72Gg6pBQ.webp";
-const COLLECTION_DISPLAY = "https://d2xsxph8kpxj0f.cloudfront.net/310519663407421710/Dh4Sf2Q7EBA8Vubfgk38fD/beckers-collection-display-ntGAAgYL4ZazLVKM3WPJbJ.webp";
-const HERITAGE_IMG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663407421710/Dh4Sf2Q7EBA8Vubfgk38fD/heritage-storefront-VcZy7sBCoDfYHaxRsuqqBg.webp";
+const HERO_BRIDE = "https://pub-6281454612a3489c9552ff2083e4b511.r2.dev/bb/beckers-hero-bride-VGi3hP37XyjN3sxmo3JxZL.webp";
+const BOUTIQUE_INTERIOR = "https://pub-6281454612a3489c9552ff2083e4b511.r2.dev/bb/beckers-boutique-interior-c9xTZPkaBq3EUrSKBwhbf3.webp";
+const GOWN_DETAIL = "https://pub-6281454612a3489c9552ff2083e4b511.r2.dev/bb/beckers-gown-detail-U22m4NHAJdJHUS72Gg6pBQ.webp";
+const COLLECTION_DISPLAY = "https://pub-6281454612a3489c9552ff2083e4b511.r2.dev/bb/beckers-collection-display-ntGAAgYL4ZazLVKM3WPJbJ.webp";
+const HERITAGE_IMG = "https://pub-6281454612a3489c9552ff2083e4b511.r2.dev/bb/heritage-storefront-VcZy7sBCoDfYHaxRsuqqBg.webp";
 
 export default function Sample() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);

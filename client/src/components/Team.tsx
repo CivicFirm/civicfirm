@@ -11,7 +11,7 @@ export const team = [
     name: "Reza Amari, M.Mgt.",
     role: "Founder & Chief Executive Officer",
     bio: "Leads business strategy, client partnerships, and growth across all verticals. Specialist in building high-performing digital teams and delivering results for local businesses.",
-    image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663407421710/CU5JQUQHP3FutNoS5xA4np/reza-amari_6e0b802d.png",
+    image: "/team/reza-amari.png",
   },
   {
     name: "Brian Lee",
